@@ -1,0 +1,27 @@
+{
+  "$comment": "O visual inteiro do app sai daqui. Troque estes valores (ou peça para a IA trocar) e a landing, o sistema e o Storybook mudam juntos. Os 71 sistemas disponíveis estão em src/lib/design-systems.json.",
+  "id": "linear.app",
+  "name": "Linear",
+  "mode": "dark",
+  "tokens": {
+    "canvas": "#010102",
+    "surface": "#0f1011",
+    "surfaceElevated": "#18191a",
+    "ink": "#f7f8f8",
+    "inkMuted": "#8a8f98",
+    "primary": "#5e6ad2",
+    "primaryInk": "#ffffff",
+    "primaryHover": "#828fff",
+    "hairline": "#23252a",
+    "success": "#27a644",
+    "danger": "#f87171",
+    "warning": "#f5a623"
+  },
+  "type": {
+    "display": "var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif",
+    "body": "var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif",
+    "displayWeight": 600,
+    "tracking": "-0.02em"
+  },
+  "radius": "8px"
+}

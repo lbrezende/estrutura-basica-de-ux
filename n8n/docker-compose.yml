@@ -1,0 +1,65 @@
+# n8n — a central de automações do projeto.
+#
+# OPCIONAL. O app funciona perfeitamente sem isto. Leia o README.md desta pasta
+# antes de subir.
+#
+# Para ligar:   docker compose up -d
+# Para desligar: docker compose down
+# Depois, abra http://localhost:5678
+
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    container_name: n8n
+
+    # 5678 é a porta padrão do n8n. Se ela já estiver ocupada na sua máquina,
+    # troque só o número da ESQUERDA (ex.: "5679:5678") e acesse pela nova.
+    ports:
+      - "5678:5678"
+
+    # Volta a subir sozinho quando você reinicia o computador.
+    # Não gosta disso? Troque por "no".
+    restart: unless-stopped
+
+    environment:
+      # Fuso horário. Sem isto, um fluxo agendado para "9h" dispara às 9h de
+      # Londres — três a quatro horas antes do seu café.
+      - GENERIC_TIMEZONE=America/Sao_Paulo
+      - TZ=America/Sao_Paulo
+
+      # Endereço que o n8n usa para montar as URLs de webhook que ele te mostra.
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+
+      # Modo recomendado de execução dos nós de código nas versões novas.
+      - N8N_RUNNERS_ENABLED=true
+
+      # Não manda estatística de uso para fora. É a sua máquina, afinal.
+      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_VERSION_NOTIFICATIONS_ENABLED=true
+
+      # Protege o arquivo de configuração interno contra leitura de outros
+      # usuários da máquina.
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+
+      # --- Senha na tela do n8n (opcional) --------------------------------
+      # Rodando só na sua máquina, não precisa. Se um dia colocar isto num
+      # servidor de verdade, descomente as três linhas e defina usuário e senha
+      # no seu .env.local — NUNCA escrevendo o valor aqui dentro.
+      # - N8N_BASIC_AUTH_ACTIVE=true
+      # - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}
+      # - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
+
+    volumes:
+      # É aqui que moram os seus fluxos, credenciais e histórico de execução.
+      # Sem este volume, "docker compose down" apagaria tudo o que você montou.
+      - n8n_dados:/home/node/.n8n
+
+      # Pasta compartilhada entre a sua máquina e o n8n, para quando um fluxo
+      # precisar ler ou gravar arquivo (CSV, PDF, imagem).
+      - ./arquivos:/files
+
+volumes:
+  n8n_dados:

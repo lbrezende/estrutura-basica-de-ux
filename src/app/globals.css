@@ -1,0 +1,456 @@
+@import "tailwindcss";
+
+/*
+  Os valores abaixo são apenas o fallback. Quem manda de verdade é o
+  design-system.json na raiz — o layout injeta essas mesmas variáveis com os
+  valores de lá. Mexer no JSON muda a landing, o sistema e o Storybook juntos.
+*/
+:root {
+  --ds-canvas: #010102;
+  --ds-surface: #0f1011;
+  --ds-surface-elevated: #18191a;
+  --ds-ink: #f7f8f8;
+  --ds-ink-muted: #8a8f98;
+  --ds-primary: #5e6ad2;
+  --ds-primary-ink: #ffffff;
+  --ds-primary-hover: #828fff;
+  --ds-hairline: #23252a;
+  --ds-success: #27a644;
+  --ds-danger: #f87171;
+  --ds-warning: #f5a623;
+
+  --ds-font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --ds-font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --ds-display-weight: 600;
+  --ds-tracking: -0.02em;
+  --ds-radius: 8px;
+}
+
+@theme inline {
+  --color-canvas: var(--ds-canvas);
+  --color-surface: var(--ds-surface);
+  --color-elevated: var(--ds-surface-elevated);
+  --color-ink: var(--ds-ink);
+  --color-muted: var(--ds-ink-muted);
+  --color-primary: var(--ds-primary);
+  --color-primary-ink: var(--ds-primary-ink);
+  --color-primary-hover: var(--ds-primary-hover);
+  --color-hairline: var(--ds-hairline);
+  --color-success: var(--ds-success);
+  --color-danger: var(--ds-danger);
+  --color-warning: var(--ds-warning);
+
+  --font-display: var(--ds-font-display);
+  --font-body: var(--ds-font-body);
+
+  --radius-ds: var(--ds-radius);
+}
+
+body {
+  background: var(--ds-canvas);
+  color: var(--ds-ink);
+  font-family: var(--ds-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ds-font-display);
+  font-weight: var(--ds-display-weight);
+  letter-spacing: var(--ds-tracking);
+}
+
+/*
+  Foco visível e consistente — acessibilidade não é opcional.
+
+  Sem `border-radius` aqui de propósito: esta regra está fora de camada e
+  venceria o `rounded-ds` das utilities, deformando todo elemento no foco.
+  O contorno já acompanha o raio do próprio elemento.
+*/
+:focus-visible {
+  outline: 2px solid var(--ds-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Camada premium
+
+   O design-system.json troca COR, FONTE e RAIO. Esta camada é o que dá o
+   acabamento, e ela vale para os 71 temas sem exceção: realce interno,
+   superfície com gradiente em vez de cor chapada, contorno de 1px translúcido
+   e brilho colorido sob o que importa.
+
+   As receitas vieram do clickmax.io/acelerador. O problema é que lá o tema é
+   escuro e a luz vem de cima em branco. Em 52 dos 71 temas do catálogo o fundo
+   é claro, e nesse caso um realce branco sobre superfície clara simplesmente
+   some. Por isso a polaridade é derivada do modo, e não fixa.
+   ========================================================================== */
+
+:root {
+  /* Tema escuro: a luz de cima é branca e a sombra de baixo é preta forte. */
+  --realce: rgba(255, 255, 255, 0.25);
+  --realce-suave: rgba(255, 255, 255, 0.1);
+  --realce-fio: rgba(255, 255, 255, 0.12);
+  --sombra-borda: rgba(0, 0, 0, 1);
+  --sombra-difusa: rgba(0, 0, 0, 0.5);
+  --forca-brilho: 0.25;
+}
+
+:root[data-mode="light"] {
+  /* Tema claro: o realce branco precisa ser bem mais forte pra aparecer, e a
+     sombra de baixo vira um cinza sutil, senão o componente fica sujo. */
+  --realce: rgba(255, 255, 255, 0.9);
+  --realce-suave: rgba(255, 255, 255, 0.55);
+  --realce-fio: rgba(0, 0, 0, 0.08);
+  --sombra-borda: rgba(0, 0, 0, 0.1);
+  --sombra-difusa: rgba(15, 23, 42, 0.12);
+  --forca-brilho: 0.18;
+}
+
+/*
+  Só o quadro inicial está escrito. O quadro final é omitido de propósito: sem
+  `to`, o navegador usa o valor que o próprio elemento já tem, que é o fundo
+  semitransparente da `.cabecalho-condensa`. Assim a receita mora num lugar só.
+
+  Fica fora do `@layer` porque `@keyframes` não pertence a camada nenhuma.
+*/
+@keyframes cabecalho-condensa {
+  from {
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    box-shadow: 0 1px 0 0 transparent;
+  }
+}
+
+@layer utilities {
+  /*
+    Superfície com profundidade.
+
+    Um gradiente vertical quase imperceptível sobre a cor base, mais um fio de
+    1px por dentro. É a diferença entre "retângulo cinza" e "painel".
+  */
+  .superficie {
+    background-image: linear-gradient(to bottom, var(--realce-suave), transparent 60%);
+    background-color: var(--ds-surface);
+    box-shadow: inset 0 0 0 1px var(--realce-fio);
+  }
+
+  .superficie-elevada {
+    background-image: linear-gradient(to bottom, var(--realce-suave), transparent 55%);
+    background-color: var(--ds-surface-elevated);
+    box-shadow:
+      inset 0 0 0 1px var(--realce-fio),
+      0 1px 2px 0 var(--sombra-difusa);
+  }
+
+  /*
+    Relevo de pílula.
+
+    A dupla sombra interna é o truque: linha clara no canto superior esquerdo,
+    linha escura no inferior direito. Dá o relevo de objeto físico.
+  */
+  .pilula,
+  .pilula-relevo {
+    background-image:
+      radial-gradient(52% 252% at 25% -105%, var(--realce) 0%, transparent 100%),
+      linear-gradient(184deg, transparent 2%, var(--sombra-difusa) 112%);
+    background-color: var(--ds-surface-elevated);
+    box-shadow:
+      inset 1px 1px 0 0 var(--realce),
+      inset -1px -1px 0 0 var(--sombra-borda);
+  }
+
+  /*
+    `.pilula` é o rótulo inteiro (o eyebrow): o relevo acima mais o tamanho.
+    `.pilula-relevo` é só o relevo, para quem já tem o próprio tamanho. O badge
+    de status vive dentro de lista densa e não pode ter 32px de altura.
+  */
+  .pilula {
+    position: relative;
+    display: inline-flex;
+    min-height: 2rem;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.375rem 1rem;
+  }
+
+  /*
+    Brilho da marca.
+
+    Uma sombra grande, difusa e COLORIDA embaixo do elemento. É o que faz o
+    herói e o botão principal parecerem iluminados em vez de colados no fundo.
+  */
+  .brilho-marca {
+    box-shadow: 0 24px 80px -24px
+      color-mix(in srgb, var(--ds-primary) calc(var(--forca-brilho) * 100%), transparent);
+  }
+
+  .brilho-suave {
+    box-shadow: 0 12px 40px -16px
+      color-mix(in srgb, var(--ds-primary) calc(var(--forca-brilho) * 70%), transparent);
+  }
+
+  /*
+    Fio de luz de 1px na borda de cima.
+
+    Vem como camada de fundo, e não como `inset 0 1px 0`, porque quem usa isto
+    normalmente já gastou o `box-shadow` com o brilho. O desenho é o mesmo.
+  */
+  .realce-topo {
+    background-image: linear-gradient(to bottom, var(--realce-suave) 0 1px, transparent 1px);
+  }
+
+  /*
+    Realce interno para peça redonda e cheia (avatar, selo, disco de número).
+
+    O `.realce-topo` é uma faixa reta: num círculo ele aparece só no ápice e some.
+    Aqui a luz de cima e o peso de baixo são sombras internas, e sombra interna
+    acompanha a curva da borda. Fica um aro iluminado em vez de um traço.
+  */
+  .realce-interno {
+    box-shadow:
+      inset 0 1px 0 0 var(--realce-suave),
+      inset 0 -1px 0 0 var(--sombra-difusa);
+  }
+
+  /*
+    Cabeçalho que só ganha peso depois que a página rola.
+
+    Sem JavaScript: a animação é presa à barra de rolagem da raiz, então a landing
+    continua 100% servidor. Onde o navegador não tem `animation-timeline` (ou onde
+    a pessoa pediu menos movimento), o cabeçalho fica direto no estado final, que
+    é o fundo semitransparente com desfoque de sempre.
+  */
+  .cabecalho-condensa {
+    background-color: color-mix(in srgb, var(--ds-canvas) 85%, transparent);
+    backdrop-filter: blur(12px);
+    /* O fio da base é sombra, e não borda: borda ocuparia 1px de layout, e é
+       justamente esse 1px que abriria uma fresta entre o topo da página e a
+       arte do herói, que sobe por baixo da barra. */
+    box-shadow: 0 1px 0 0 var(--ds-hairline);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      .cabecalho-condensa {
+        animation: cabecalho-condensa linear both;
+        animation-timeline: scroll(root block);
+        animation-range: 0 80px;
+      }
+    }
+  }
+
+  /*
+    Preenchimento do botão de ação.
+
+    A cor de ação como base, o fio de luz no topo e o peso escuro no rodapé. É o
+    que separa o botão iluminado do retângulo colorido.
+
+    O escurecimento só começa aos 76% da altura, abaixo da linha do texto. A cor
+    do texto do botão foi validada contra a primária sólida nos 71 temas, e
+    escurecer a faixa onde a letra pousa desfaria essa conta.
+  */
+  .preenchimento-acao {
+    background-color: var(--ds-primary);
+    background-image:
+      linear-gradient(to bottom, var(--realce-suave) 0 1px, transparent 1px),
+      linear-gradient(
+        to bottom,
+        transparent 76%,
+        color-mix(in srgb, var(--ds-primary) 88%, #000) 100%
+      );
+  }
+
+  /*
+    Chip que segura a seta dentro do CTA.
+
+    Anel escuro por fora e fio claro por dentro. Sem isso o botão vira um
+    retângulo colorido comum.
+  */
+  .chip-seta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 9999px;
+    background-color: var(--ds-canvas);
+    color: var(--ds-primary);
+    box-shadow:
+      0 0 0 1px var(--sombra-borda),
+      0 1px 2px 0 var(--sombra-difusa);
+    outline: 1px solid var(--realce-fio);
+    outline-offset: -1px;
+  }
+
+  @media (min-width: 640px) {
+    .chip-seta {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  /*
+    Título com gradiente.
+
+    Só começa a desbotar aos 24% da altura, então a primeira linha fica sólida
+    e o fim esmaece. Copiado do .title-gradient do Clickmax.
+  */
+  .titulo-gradiente {
+    background-image: linear-gradient(
+      to bottom,
+      var(--ds-ink) 24%,
+      color-mix(in srgb, var(--ds-ink) 55%, var(--ds-canvas))
+    );
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Aura de fundo de seção. Fica atrás do conteúdo, nunca por cima. */
+  .aura-secao {
+    position: relative;
+  }
+  .aura-secao::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(
+      ellipse 70% 50% at 50% 0%,
+      color-mix(in srgb, var(--ds-primary) 10%, transparent) 0%,
+      transparent 70%
+    );
+  }
+
+  /* Fio de luz de 1px no topo de modal e painel. */
+  .fio-luz {
+    position: relative;
+  }
+  .fio-luz::before {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in srgb, var(--ds-primary) 50%, transparent),
+      transparent
+    );
+  }
+
+  /*
+    Brilho colorido por `filter`.
+
+    Mesma receita do `.brilho-marca`/`.brilho-suave`, só que por `drop-shadow`.
+    `box-shadow` é uma propriedade só: quem já a gastou com a superfície (o item
+    ativo do menu, o cartão do quadro) não pode declarar a segunda sem apagar a
+    primeira. O `filter` compõe em vez de substituir. Foi o caminho que o modal
+    já tinha aberto.
+  */
+  .brilho-marca-filtro {
+    filter: drop-shadow(
+      0 10px 28px color-mix(in srgb, var(--ds-primary) calc(var(--forca-brilho) * 90%), transparent)
+    );
+  }
+
+  .brilho-suave-filtro {
+    filter: drop-shadow(
+      0 5px 14px color-mix(in srgb, var(--ds-primary) calc(var(--forca-brilho) * 65%), transparent)
+    );
+  }
+
+  /*
+    Elevação no ponteiro.
+
+    O cartão do quadro sai do plano quando o mouse chega e volta quando ele sai.
+    O `:has(:focus-visible)` dá o mesmo sinal a quem chega pelo teclado. A regra
+    global de `prefers-reduced-motion` já zera esta transição.
+  */
+  .elevar-no-ponteiro {
+    transition: filter 150ms ease;
+  }
+  .elevar-no-ponteiro:hover,
+  .elevar-no-ponteiro:has(:focus-visible) {
+    filter: drop-shadow(
+      0 6px 16px color-mix(in srgb, var(--ds-primary) calc(var(--forca-brilho) * 60%), transparent)
+    );
+  }
+
+  /*
+    Coluna lateral do sistema.
+
+    A luz entra por cima e morre no primeiro terço, e a borda direita ganha o fio
+    de 1px por DENTRO da hairline. No escuro esse fio é branco (a aresta pegando
+    luz); no claro ele é escuro (a sombra que a coluna projeta no conteúdo). É a
+    mesma variável fazendo os dois trabalhos, porque a polaridade já vem do modo.
+  */
+  .painel-lateral {
+    background-image: linear-gradient(to bottom, var(--realce-suave), transparent 38%);
+    background-color: var(--ds-surface);
+    box-shadow: inset -1px 0 0 0 var(--realce-fio);
+  }
+
+  /*
+    Barra fixa do topo.
+
+    Fio de luz por dentro da base mais uma sombra curta por fora: o conteúdo
+    passa POR BAIXO da barra em vez de encostar nela. Combina com o
+    `backdrop-blur`, que sozinho só embaça.
+  */
+  .fio-base {
+    box-shadow:
+      inset 0 -1px 0 0 var(--realce-suave),
+      0 6px 16px -12px var(--sombra-difusa);
+  }
+
+  /*
+    Faixa de 2px no topo do cartão.
+
+    Começa e termina em transparente de propósito: assim ela não precisa saber o
+    raio do cartão para não vazar pelo canto arredondado.
+  */
+  .faixa-topo {
+    position: relative;
+  }
+  .faixa-topo::before {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 2px;
+    pointer-events: none;
+    background-image: linear-gradient(
+      to right,
+      transparent 0%,
+      color-mix(in srgb, var(--ds-primary) 80%, transparent) 16%,
+      color-mix(in srgb, var(--ds-primary) 18%, transparent) 55%,
+      transparent 92%
+    );
+  }
+
+  /*
+    Halo curto atrás do símbolo da marca.
+
+    Vai no `filter` do próprio SVG, então acompanha o desenho em vez de virar um
+    quadrado luminoso atrás dele.
+  */
+  .realce-marca svg {
+    filter: drop-shadow(0 1px 6px color-mix(in srgb, var(--ds-primary) 45%, transparent));
+  }
+}

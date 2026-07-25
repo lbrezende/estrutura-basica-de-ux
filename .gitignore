@@ -1,0 +1,57 @@
+# Este arquivo lista o que NÃO deve ir para o GitHub.
+# Mais sobre o assunto: https://docs.github.com/pt/get-started/git-basics/ignoring-files
+
+# Dependências (o npm install baixa tudo de novo)
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Testes
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Build de produção
+/build
+
+# Storybook
+storybook-static/
+
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+*.pem
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Senhas e chaves de API.
+# Regra: NADA de arquivo .env vai para o GitHub. A única exceção é o
+# .env.example, que existe justamente para não ter valor nenhum dentro.
+.env
+.env.local
+.env*.local
+.env.*
+!.env.example
+
+# n8n (dados locais do contêiner, caso você use bind mount)
+n8n/dados/
+n8n/.n8n/
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts

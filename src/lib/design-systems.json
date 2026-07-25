@@ -1,0 +1,1571 @@
+{
+  "generatedFrom": "awesome-design-md (VoltAgent, MIT)",
+  "total": 71,
+  "fromFrontmatter": 61,
+  "fromMarkdown": 10,
+  "renderable": 71,
+  "systems": [
+    {
+      "id": "airbnb",
+      "name": "Airbnb",
+      "vibe": "A warm, generous consumer marketplace anchored on a clean white canvas and Airbnb Rausch (#ff385c), the single brand voltage that carries every primary CTA, search-button orb, and rating dot.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#ffffff",
+        "ink": "#222222",
+        "primary": "#ff385c",
+        "accent": null,
+        "hairline": "#dddddd"
+      },
+      "type": {
+        "display": "'Airbnb Cereal VF', Circular, -apple-system, system-ui, Roboto, 'Helvetica Neue', sans-serif",
+        "body": "'Airbnb Cereal VF', Circular, sans-serif",
+        "displayWeight": 700,
+        "tracking": -1
+      },
+      "radius": "14px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "airtable",
+      "name": "Airtable",
+      "vibe": "A sober, editorial workflow-software interface anchored on white canvas and dark-ink type, where brand voltage comes from full-bleed signature cards in coral, dark green, peach, and dark navy that punctuate…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#f8fafc",
+        "ink": "#181d26",
+        "primary": "#181d26",
+        "accent": null,
+        "hairline": "#dddddd"
+      },
+      "type": {
+        "display": "Haas Groot Disp, Haas, sans-serif",
+        "body": "Haas, sans-serif",
+        "displayWeight": 500,
+        "tracking": 0
+      },
+      "radius": "10px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "vibe": "A photography-first interface that turns marketing into a museum gallery.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#fafafc",
+        "ink": "#1d1d1f",
+        "primary": "#0066cc",
+        "accent": null,
+        "hairline": "#e0e0e0"
+      },
+      "type": {
+        "display": "SF Pro Display, system-ui, -apple-system, sans-serif",
+        "body": "SF Pro Text, system-ui, -apple-system, sans-serif",
+        "displayWeight": 600,
+        "tracking": -0.374
+      },
+      "radius": "11px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "binance",
+      "name": "Binance",
+      "vibe": "A confident financial-platform interface anchored on a deep near-black canvas, where Binance's iconic yellow (#FCD535) carries every primary CTA, brand accent, and value-claim moment.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#1e2329",
+        "ink": "#181a20",
+        "primary": "#fcd535",
+        "accent": "#2dbdb6",
+        "hairline": "#eaecef"
+      },
+      "type": {
+        "display": "BinanceNova, -apple-system, BlinkMacSystemFont, sans-serif",
+        "body": "BinanceNova, sans-serif",
+        "displayWeight": 700,
+        "tracking": -1
+      },
+      "radius": "6px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "bmw",
+      "name": "Bmw",
+      "vibe": "BMW's corporate site — distinct from BMW M's motorsport-bombastic variant, this is a measured and settled corporate-automotive interface.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#fafafa",
+        "ink": "#262626",
+        "primary": "#1c69d4",
+        "accent": null,
+        "hairline": "#e6e6e6"
+      },
+      "type": {
+        "display": "'BMW Type Next Latin', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "body": "'BMW Type Next Latin', sans-serif",
+        "displayWeight": 700,
+        "tracking": 0
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "bmw-m",
+      "name": "BMW M",
+      "vibe": "A motorsport-engineering interface anchored on a near-black canvas with white BMW Type Next Latin display headlines in confident UPPERCASE.",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#000000",
+        "surface": "#1a1a1a",
+        "ink": "#ffffff",
+        "primary": "#ffffff",
+        "accent": null,
+        "hairline": "#3c3c3c"
+      },
+      "type": {
+        "display": "BMWTypeNextLatin, sans-serif",
+        "body": "BMWTypeNextLatin Light, BMWTypeNextLatin, sans-serif",
+        "displayWeight": 700,
+        "tracking": 0
+      },
+      "radius": "6px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "bugatti",
+      "name": "Bugatti",
+      "vibe": "An austere luxury-automotive interface that uses near-pure black canvas, white uppercase letterspaced display, and full-bleed automotive photography as the only voltage.",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#000000",
+        "surface": "#141414",
+        "ink": "#ffffff",
+        "primary": "#ffffff",
+        "accent": null,
+        "hairline": "#262626"
+      },
+      "type": {
+        "display": "Bugatti Display, sans-serif",
+        "body": "Bugatti Text Regular, serif",
+        "displayWeight": 400,
+        "tracking": 0
+      },
+      "radius": "0px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "cal",
+      "name": "Cal",
+      "vibe": "A clean, calendar-software-first interface anchored on white canvas with black primary CTAs and custom Cal Sans display typography.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#f5f5f5",
+        "ink": "#111111",
+        "primary": "#111111",
+        "accent": null,
+        "hairline": "#e5e7eb"
+      },
+      "type": {
+        "display": "Cal Sans, Inter, sans-serif",
+        "body": "Inter, sans-serif",
+        "displayWeight": 600,
+        "tracking": -2
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "vibe": "A warm-canvas editorial interface for Anthropic's Claude product.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#faf9f5",
+        "surface": "#efe9de",
+        "ink": "#141413",
+        "primary": "#cc785c",
+        "accent": "#5db8a6",
+        "hairline": "#e6dfd8"
+      },
+      "type": {
+        "display": "Copernicus, Tiempos Headline, serif",
+        "body": "StyreneB, Inter, sans-serif",
+        "displayWeight": 400,
+        "tracking": -1.5
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "clay",
+      "name": "Clay",
+      "vibe": "A vibrant claymation-meets-data interface for Clay.com (GTM data-orchestration platform).",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#fffaf0",
+        "surface": "#f5f0e0",
+        "ink": "#0a0a0a",
+        "primary": "#0a0a0a",
+        "accent": null,
+        "hairline": "#e5e5e5"
+      },
+      "type": {
+        "display": "Plain Black, Inter, sans-serif",
+        "body": "Inter, sans-serif",
+        "displayWeight": 500,
+        "tracking": -2.5
+      },
+      "radius": "12px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "clickhouse",
+      "name": "Clickhouse",
+      "vibe": "A high-performance database interface anchored on near-pure black canvas with electric yellow as the brand voltage.",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#0a0a0a",
+        "surface": "#1a1a1a",
+        "ink": "#ffffff",
+        "primary": "#faff69",
+        "accent": "#22c55e",
+        "hairline": "#2a2a2a"
+      },
+      "type": {
+        "display": "Inter, sans-serif",
+        "body": "Inter, sans-serif",
+        "displayWeight": 700,
+        "tracking": -2.5
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "cohere",
+      "name": "Cohere",
+      "vibe": "Cohere's 2026 web system is a controlled enterprise AI interface built from stark white editorial space, deep green-black product bands, soft mineral surfaces, rounded media cards, and a distinctive type split…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": null,
+        "ink": "#212121",
+        "primary": "#17171c",
+        "accent": null,
+        "hairline": "#d9d9dd"
+      },
+      "type": {
+        "display": "CohereText",
+        "body": "Unica77 Cohere Web",
+        "displayWeight": 400,
+        "tracking": -1.92
+      },
+      "radius": "16px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "coinbase",
+      "name": "Coinbase",
+      "vibe": "An institutional-grade crypto exchange whose marketing surfaces read like a quietly-confident financial-services brand.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#ffffff",
+        "ink": "#0a0b0d",
+        "primary": "#0052ff",
+        "accent": "#f4b000",
+        "hairline": "#dee1e6"
+      },
+      "type": {
+        "display": "'Coinbase Display', -apple-system, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+        "body": "'Coinbase Sans', sans-serif",
+        "displayWeight": 400,
+        "tracking": -2
+      },
+      "radius": "12px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "composio",
+      "name": "Composio",
+      "vibe": "A developer-tools brand for AI-agent tool integration whose marketing surfaces lean into a dark, technical aesthetic with a single deep-electric-blue voltage (#0007cd).",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#0f0f0f",
+        "surface": "#181818",
+        "ink": "#ffffff",
+        "primary": "#0007cd",
+        "accent": "#00d4ff",
+        "hairline": "#222222"
+      },
+      "type": {
+        "display": "'abcDiatype', ui-sans-serif, system-ui, sans-serif",
+        "body": "'abcDiatype', ui-sans-serif, system-ui, sans-serif",
+        "displayWeight": 500,
+        "tracking": -2.16
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "vibe": "An AI-first code editor whose marketing site reads like a quietly-confident developer-tools brand with a warm-cream editorial canvas (#f7f7f4) instead of the typical dark IDE atmosphere.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#f7f7f4",
+        "surface": "#ffffff",
+        "ink": "#26251e",
+        "primary": "#f54e00",
+        "accent": null,
+        "hairline": "#e6e5e0"
+      },
+      "type": {
+        "display": "'CursorGothic', system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif",
+        "body": "'CursorGothic', sans-serif",
+        "displayWeight": 400,
+        "tracking": -2.16
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "elevenlabs",
+      "name": "Elevenlabs",
+      "vibe": "A voice-AI brand whose marketing surfaces read like a quietly editorial print magazine.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#f5f5f5",
+        "surface": "#ffffff",
+        "ink": "#0c0a09",
+        "primary": "#292524",
+        "accent": null,
+        "hairline": "#e7e5e4"
+      },
+      "type": {
+        "display": "'Waldenburg', 'Times New Roman', serif",
+        "body": "'Inter', sans-serif",
+        "displayWeight": 300,
+        "tracking": -1.92
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "expo",
+      "name": "Expo",
+      "vibe": "A React Native developer-platform whose marketing site reads like a quietly-confident infrastructure brand.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#ffffff",
+        "ink": "#171717",
+        "primary": "#000000",
+        "accent": "#ab6400",
+        "hairline": "#f0f0f3"
+      },
+      "type": {
+        "display": "'Inter', -apple-system, system-ui, sans-serif",
+        "body": "'Inter', sans-serif",
+        "displayWeight": 600,
+        "tracking": -1.92
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "ferrari",
+      "name": "Ferrari",
+      "vibe": "A luxury-automotive brand whose marketing surfaces read as cinematic editorial.",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#181818",
+        "surface": "#303030",
+        "ink": "#ffffff",
+        "primary": "#da291c",
+        "accent": "#fff200",
+        "hairline": "#303030"
+      },
+      "type": {
+        "display": "'FerrariSans', -apple-system, system-ui, sans-serif",
+        "body": "'FerrariSans', sans-serif",
+        "displayWeight": 500,
+        "tracking": -1.6
+      },
+      "radius": "6px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "vibe": "A confident black-and-white editorial frame interrupted by oversized, hand-cut pastel color blocks.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#f7f7f5",
+        "ink": "#000000",
+        "primary": "#000000",
+        "accent": "#ff3d8b",
+        "hairline": "#e6e6e6"
+      },
+      "type": {
+        "display": "figmaSans",
+        "body": "figmaSans",
+        "displayWeight": 340,
+        "tracking": -1.72
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "framer",
+      "name": "Framer",
+      "vibe": "A confident dark-canvas builder marketing site that treats the page like a working artboard — pure black surfaces, white display type set in GT Walsheim Medium with aggressive negative tracking, and a single…",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#090909",
+        "surface": "#141414",
+        "ink": "#ffffff",
+        "primary": "#ffffff",
+        "accent": "#0099ff",
+        "hairline": "#262626"
+      },
+      "type": {
+        "display": "GT Walsheim Framer Medium",
+        "body": "Inter Variable",
+        "displayWeight": 500,
+        "tracking": -5.5
+      },
+      "radius": "10px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "hashicorp",
+      "name": "Hashicorp",
+      "vibe": "An enterprise-infrastructure marketing canvas built around a near-black ground (#000000) and a system of per-product accent colors — Terraform purple, Vault yellow, Consul pink, Waypoint cyan, Vagrant blue —…",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#000000",
+        "surface": "#15181e",
+        "ink": "#ffffff",
+        "primary": "#000000",
+        "accent": "#2b89ff",
+        "hairline": "#3b3d45"
+      },
+      "type": {
+        "display": "hashicorpSans",
+        "body": "hashicorpSans",
+        "displayWeight": 700,
+        "tracking": -2.5
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "ibm",
+      "name": "IBM",
+      "vibe": "An enterprise-marketing canvas faithful to Carbon Design System: white surfaces, charcoal type, IBM Blue (#0f62fe) as the single confident accent, and a deliberately flat-square aesthetic where corners stay at…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#f4f4f4",
+        "ink": "#161616",
+        "primary": "#0f62fe",
+        "accent": null,
+        "hairline": "#e0e0e0"
+      },
+      "type": {
+        "display": "IBM Plex Sans",
+        "body": "IBM Plex Sans",
+        "displayWeight": 300,
+        "tracking": -0.5
+      },
+      "radius": "6px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "intercom",
+      "name": "Intercom",
+      "vibe": "An editorial customer-service marketing canvas built around a soft cream-white ground, charcoal type set in Saans (Intercom's proprietary geometric sans), and a single confident Fin Orange (#ff5600) reserved…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#f5f1ec",
+        "surface": "#ffffff",
+        "ink": "#111111",
+        "primary": "#111111",
+        "accent": null,
+        "hairline": "#d3cec6"
+      },
+      "type": {
+        "display": "Saans",
+        "body": "Saans",
+        "displayWeight": 500,
+        "tracking": -2
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "kraken",
+      "name": "Kraken",
+      "vibe": "Kraken's website is a clean, trustworthy crypto exchange that uses purple as its commanding brand color.",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#5b1ecf",
+        "surface": "#ffffff",
+        "ink": "#9497a9",
+        "primary": "#7132f5",
+        "accent": null,
+        "hairline": "#5741d8"
+      },
+      "type": {
+        "display": "Kraken-Brand",
+        "body": "Kraken-Product",
+        "displayWeight": null,
+        "tracking": null
+      },
+      "radius": null,
+      "source": "markdown"
+    },
+    {
+      "id": "lamborghini",
+      "name": "Lamborghini",
+      "vibe": "Lamborghini's website is a cathedral of darkness — a digital stage where jet-black surfaces stretch infinitely and every element emerges from the void like a machine under a spotlight.",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#000000",
+        "surface": "#ffffff",
+        "ink": "#ffffff",
+        "primary": "#ffc000",
+        "accent": null,
+        "hairline": null
+      },
+      "type": {
+        "display": "LamboType",
+        "body": "LamboType",
+        "displayWeight": null,
+        "tracking": null
+      },
+      "radius": null,
+      "source": "markdown"
+    },
+    {
+      "id": "linear.app",
+      "name": "Linear",
+      "vibe": "A near-black product-focused marketing canvas built around #010102 (the deepest dark surface of any tool in this collection), light gray text (#f7f8f8), and the signature Linear lavender-blue (#5e6ad2) used as…",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#010102",
+        "surface": "#0f1011",
+        "ink": "#f7f8f8",
+        "primary": "#5e6ad2",
+        "accent": null,
+        "hairline": "#23252a"
+      },
+      "type": {
+        "display": "Linear Display",
+        "body": "Linear Text",
+        "displayWeight": 600,
+        "tracking": -3
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "lovable",
+      "name": "Lovable",
+      "vibe": "Lovable's website radiates warmth through restraint.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#f7f4ed",
+        "surface": "#1c1c1c",
+        "ink": "#5f5f5d",
+        "primary": "#5f5f5d",
+        "accent": null,
+        "hairline": "#eceae4"
+      },
+      "type": {
+        "display": "Camera Plain Variable",
+        "body": null,
+        "displayWeight": null,
+        "tracking": null
+      },
+      "radius": null,
+      "source": "markdown"
+    },
+    {
+      "id": "mastercard",
+      "name": "Mastercard",
+      "vibe": "Mastercard's experience reads like a warm, editorial magazine built from soft stone and signal orange.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#f3f0ee",
+        "surface": "#ffffff",
+        "ink": "#141413",
+        "primary": "#eb001b",
+        "accent": null,
+        "hairline": null
+      },
+      "type": {
+        "display": "MarkForMC",
+        "body": null,
+        "displayWeight": null,
+        "tracking": null
+      },
+      "radius": null,
+      "source": "markdown"
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "vibe": "Meta's design system spans hardware commerce (Quest VR, Ray-Ban Meta AI glasses) and brand surfaces with a confident product-merchandising voice.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#f1f4f7",
+        "ink": "#1c1e21",
+        "primary": "#0064e0",
+        "accent": null,
+        "hairline": "#ced0d4"
+      },
+      "type": {
+        "display": "Optimistic VF",
+        "body": "Optimistic VF",
+        "displayWeight": 500,
+        "tracking": -0.16
+      },
+      "radius": "6px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "minimax",
+      "name": "Minimax",
+      "vibe": "MiniMax presents itself as a premium AI infrastructure brand through a striking duality — bold black-pill CTAs and stark white canvas for marketing, paired with vibrant gradient product cards (orange-red,…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#f7f8fa",
+        "ink": "#0a0a0a",
+        "primary": "#0a0a0a",
+        "accent": null,
+        "hairline": "#e5e7eb"
+      },
+      "type": {
+        "display": "DM Sans",
+        "body": "DM Sans",
+        "displayWeight": 600,
+        "tracking": -2
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "mintlify",
+      "name": "Mintlify",
+      "vibe": "Mintlify presents documentation infrastructure with a dual-mode aesthetic — atmospheric sky-gradient marketing heroes (cloud illustration backdrops, soft cream-to-blue washes) paired with dense developer-grade…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#f7f7f7",
+        "ink": "#0a0a0a",
+        "primary": "#0a0a0a",
+        "accent": null,
+        "hairline": "#e5e5e5"
+      },
+      "type": {
+        "display": "Inter",
+        "body": "Inter",
+        "displayWeight": 600,
+        "tracking": -2
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "miro",
+      "name": "Miro",
+      "vibe": "Miro presents itself as the AI-powered visual workspace through a confident, almost playful brand voice — anchored by its signature canary yellow ({colors.brand-yellow}) wordmark over white canvas, broken open…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#f7f8fa",
+        "ink": "#1c1c1e",
+        "primary": "#1c1c1e",
+        "accent": null,
+        "hairline": "#e0e2e8"
+      },
+      "type": {
+        "display": "Roobert PRO",
+        "body": "Roobert PRO",
+        "displayWeight": 500,
+        "tracking": -2
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "mistral.ai",
+      "name": "Mistral",
+      "vibe": "Mistral AI brands itself with a singular signature — atmospheric sunset gradients (mustard, orange, deep red) layered over photography of mountains, plus a horizontal \"sunset stripe\" bar that closes every page.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#fafafa",
+        "ink": "#1f1f1f",
+        "primary": "#fa520f",
+        "accent": null,
+        "hairline": "#e5e5e5"
+      },
+      "type": {
+        "display": "PP Editorial Old",
+        "body": "Inter",
+        "displayWeight": 400,
+        "tracking": -1.5
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "mongodb",
+      "name": "Mongodb",
+      "vibe": "MongoDB carries a strong dual-mode visual identity — dark deep-teal hero bands with bright MongoDB green ({colors.brand-green}) CTAs paired with stark white documentation surfaces.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#f9fbfa",
+        "ink": "#001e2b",
+        "primary": "#00ed64",
+        "accent": "#7b3ff2",
+        "hairline": "#e1e5e8"
+      },
+      "type": {
+        "display": "Euclid Circular A",
+        "body": "Euclid Circular A",
+        "displayWeight": 500,
+        "tracking": -1.5
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "nike",
+      "name": "Nike",
+      "vibe": "A photography-first commerce system built on extreme typographic contrast — towering uppercase Futura display lockups burned into editorial campaign imagery, sitting above a dense, neutral, near-monochrome…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": null,
+        "ink": "#111111",
+        "primary": "#111111",
+        "accent": "#ed1aa0",
+        "hairline": "#cacacb"
+      },
+      "type": {
+        "display": "Nike Futura ND",
+        "body": "Helvetica Now Text",
+        "displayWeight": 500,
+        "tracking": 0
+      },
+      "radius": "24px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "vibe": "Notion presents itself as the all-in-one workspace through a confident, illustration-rich brand voice — anchored by a deep navy hero band ({colors.brand-navy}) decorated with brand-colored sticky-note dots and…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#f6f5f4",
+        "ink": "#1a1a1a",
+        "primary": "#5645d4",
+        "accent": null,
+        "hairline": "#e5e3df"
+      },
+      "type": {
+        "display": "Notion Sans",
+        "body": "Notion Sans",
+        "displayWeight": 600,
+        "tracking": -2
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "vibe": "An engineering-grade marketing system organized around two surface modes — a deep black canvas for hero and footer chapters and a flat paper-white canvas for body content — connected by a single, almost…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#1a1a1a",
+        "ink": "#000000",
+        "primary": "#76b900",
+        "accent": "#feeeb2",
+        "hairline": "#cccccc"
+      },
+      "type": {
+        "display": "NVIDIA-EMEA",
+        "body": "NVIDIA-EMEA",
+        "displayWeight": 700,
+        "tracking": 0
+      },
+      "radius": "2px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "vibe": "An almost defiantly minimal documentation-first system that treats the home page like a Markdown README — paper-white canvas, 36px center-aligned heading, a single black pill CTA, an inline terminal install…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#ffffff",
+        "ink": "#000000",
+        "primary": "#000000",
+        "accent": null,
+        "hairline": "#e5e5e5"
+      },
+      "type": {
+        "display": "SF Pro Rounded",
+        "body": "ui-sans-serif",
+        "displayWeight": 500,
+        "tracking": 0
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "opencode.ai",
+      "name": "OpenCode",
+      "vibe": "A terminal-native marketing system rendered entirely in Berkeley Mono — every word on the page, from the hero headline down to the footer fine print, is monospaced.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#fdfcfc",
+        "surface": "#f1eeee",
+        "ink": "#201d1d",
+        "primary": "#201d1d",
+        "accent": "#0056b3",
+        "hairline": "rgba(15,0,0,0.12)"
+      },
+      "type": {
+        "display": "Berkeley Mono",
+        "body": "Berkeley Mono",
+        "displayWeight": 700,
+        "tracking": 0
+      },
+      "radius": "4px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "pinterest",
+      "name": "Pinterest",
+      "vibe": "A photography-first discovery system organized around the Pinterest Red CTA, the masonry pin grid, and a soft warm-cream chrome that gets out of the imagery's way.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#f6f6f3",
+        "ink": "#000000",
+        "primary": "#e60023",
+        "accent": "#617bff",
+        "hairline": "#dadad3"
+      },
+      "type": {
+        "display": "Pin Sans",
+        "body": "Pin Sans",
+        "displayWeight": 600,
+        "tracking": -1.2
+      },
+      "radius": "16px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "playstation",
+      "name": "Playstation",
+      "vibe": "A three-surface marketing system organized around alternating black, white, and PlayStation Blue chapters that scroll past the viewer like a console launch trailer.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#f5f7fa",
+        "ink": "#000000",
+        "primary": "#0070d1",
+        "accent": null,
+        "hairline": "#f3f3f3"
+      },
+      "type": {
+        "display": "PlayStation SST",
+        "body": "PlayStation SST",
+        "displayWeight": 300,
+        "tracking": -0.1
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "posthog",
+      "name": "Posthog",
+      "vibe": "A playful developer-tools system rendered on a warm cream canvas with hand-drawn hedgehog mascots dotted across every page like marginalia in a sketchbook.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#eeefe9",
+        "surface": "#ffffff",
+        "ink": "#23251d",
+        "primary": "#f7a501",
+        "accent": "#2c84e0",
+        "hairline": "#bfc1b7"
+      },
+      "type": {
+        "display": "IBM Plex Sans Variable",
+        "body": "IBM Plex Sans Variable",
+        "displayWeight": 700,
+        "tracking": -0.6
+      },
+      "radius": "6px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "raycast",
+      "name": "Raycast",
+      "vibe": "Raycast's marketing system reads like an extended product screenshot.",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#07080a",
+        "surface": "#121212",
+        "ink": "#f4f4f6",
+        "primary": "#ffffff",
+        "accent": "#57c1ff",
+        "hairline": "#242728"
+      },
+      "type": {
+        "display": "Inter",
+        "body": "Inter",
+        "displayWeight": 600,
+        "tracking": 0
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "renault",
+      "name": "Renault",
+      "vibe": "Renault's web presence pairs the freshly-modernised Renault diamond (the 2021 flat-line rhombus mark) with a stark black-and-white canvas, a signature Sunlight Yellow accent, and the proprietary NouvelR…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#ffffff",
+        "ink": "#000000",
+        "primary": "#ffed00",
+        "accent": null,
+        "hairline": "#f2f2f2"
+      },
+      "type": {
+        "display": "NouvelR",
+        "body": "NouvelR",
+        "displayWeight": 700,
+        "tracking": 0
+      },
+      "radius": "4px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "replicate",
+      "name": "Replicate",
+      "vibe": "Replicate's marketing surfaces pair the warm-cream developer-tools aesthetic of an indie ML playground with a confident hot-orange brand accent and a signature display typeface (rb-freigeist-neue) sized…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#f9f7f3",
+        "surface": "#ffffff",
+        "ink": "#202020",
+        "primary": "#ea2804",
+        "accent": null,
+        "hairline": "rgba(32,32,32,0.12)"
+      },
+      "type": {
+        "display": "rb-freigeist-neue",
+        "body": "basier-square",
+        "displayWeight": 700,
+        "tracking": -3
+      },
+      "radius": "10px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "resend",
+      "name": "Resend",
+      "vibe": "Resend's marketing surfaces sit on a near-pure black canvas with off-white text and a single signature color — the deep editorial-serif Domaine Display headline mark — that gives an otherwise utilitarian…",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#000000",
+        "surface": "#0a0a0c",
+        "ink": "#fcfdff",
+        "primary": "#fcfdff",
+        "accent": "#ff801f",
+        "hairline": "rgba(255,255,255,0.06)"
+      },
+      "type": {
+        "display": "Domaine Display",
+        "body": "Inter",
+        "displayWeight": 400,
+        "tracking": -2.8
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "revolut",
+      "name": "Revolut",
+      "vibe": "Revolut's marketing surfaces pair a stark black canvas with the brand's cobalt-violet (#494fdf) and a wide accent palette of deep, fully-saturated product colours — teal, light-blue, deep pink, light-green,…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#ffffff",
+        "ink": "#191c1f",
+        "primary": "#494fdf",
+        "accent": "#00a87e",
+        "hairline": "#e2e2e7"
+      },
+      "type": {
+        "display": "Aeonik Pro",
+        "body": "Inter",
+        "displayWeight": 500,
+        "tracking": -2.72
+      },
+      "radius": "12px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "runwayml",
+      "name": "Runwayml",
+      "vibe": "Runway's interface is a cinematic reel brought to life as a website — a dark, editorial, film-production-grade design where full-bleed photography and video ARE the primary UI elements.",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#000000",
+        "surface": "#030303",
+        "ink": "#a7a7a7",
+        "primary": "#a7a7a7",
+        "accent": null,
+        "hairline": "#c9ccd1"
+      },
+      "type": {
+        "display": "abcNormal",
+        "body": "abcNormal",
+        "displayWeight": null,
+        "tracking": null
+      },
+      "radius": null,
+      "source": "markdown"
+    },
+    {
+      "id": "sanity",
+      "name": "Sanity",
+      "vibe": "Sanity's website is a developer-content platform rendered as a nocturnal command center -- dark, precise, and deeply structured.",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#0b0b0b",
+        "surface": "#212121",
+        "ink": "#b9b9b9",
+        "primary": "#f36458",
+        "accent": null,
+        "hairline": "#353535"
+      },
+      "type": {
+        "display": "waldenburgNormal",
+        "body": "waldenburgNormal",
+        "displayWeight": null,
+        "tracking": null
+      },
+      "radius": null,
+      "source": "markdown"
+    },
+    {
+      "id": "sentry",
+      "name": "Sentry",
+      "vibe": "An inspired interpretation of Sentri's design language — a developer-tools brand built on a deep purple-violet midnight canvas, electric lime accents, and a slightly subversive illustrated personality.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#1f1633",
+        "ink": "#1f1633",
+        "primary": "#150f23",
+        "accent": "#c2ef4e",
+        "hairline": "#362d59"
+      },
+      "type": {
+        "display": "Sentri Display, Rubik, system-ui, sans-serif",
+        "body": "Rubik, -apple-system, system-ui, sans-serif",
+        "displayWeight": 700,
+        "tracking": 0
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "shopify",
+      "name": "Shopify",
+      "vibe": "An inspired interpretation of Shopifi's design language — a cinematic commerce platform that runs two parallel design tracks.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#1e2c31",
+        "ink": "#000000",
+        "primary": "#000000",
+        "accent": null,
+        "hairline": "#e4e4e7"
+      },
+      "type": {
+        "display": "NeueHaasGrotesk Display, Helvetica, Arial, sans-serif",
+        "body": "Inter Variable, Inter, Helvetica, Arial, sans-serif",
+        "displayWeight": 330,
+        "tracking": -0.13
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "vibe": "An inspired interpretation of Slacc's design language — a workplace messaging brand built on a deep aubergine primary, with cream-lavender hero gradients, blue inline links, and pill CTAs.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#ffffff",
+        "ink": "#1d1d1d",
+        "primary": "#4a154b",
+        "accent": null,
+        "hairline": "#e6e6e6"
+      },
+      "type": {
+        "display": "Salesforce-Avant-Garde, system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+        "body": "Salesforce-Sans, system-ui, -apple-system, sans-serif",
+        "displayWeight": 700,
+        "tracking": -0.768
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "spacex",
+      "name": "Spacex",
+      "vibe": "An inspired interpretation of Spasex's design language — a mission-oriented aerospace brand built on pure black canvas, full-bleed photographic and video heroes of rockets and Mars landscapes, and uppercase…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": null,
+        "ink": "#000000",
+        "primary": "#000000",
+        "accent": null,
+        "hairline": "#3a3a3f"
+      },
+      "type": {
+        "display": "D-DIN-Bold, Arial Narrow, Arial, Verdana, sans-serif",
+        "body": "D-DIN, Arial, Verdana, sans-serif",
+        "displayWeight": 700,
+        "tracking": 0
+      },
+      "radius": "16px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "vibe": "Spotify's web interface is a dark, immersive music player that wraps listeners in a near-black cocoon (#121212, #181818, #1f1f1f) where album art and content become the primary source of color.",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#121212",
+        "surface": "#181818",
+        "ink": "#ffffff",
+        "primary": "#1ed760",
+        "accent": null,
+        "hairline": "#7c7c7c"
+      },
+      "type": {
+        "display": "SpotifyMixUITitle",
+        "body": "SpotifyMixUI",
+        "displayWeight": null,
+        "tracking": null
+      },
+      "radius": null,
+      "source": "markdown"
+    },
+    {
+      "id": "starbucks",
+      "name": "Starbucks",
+      "vibe": "Starbucks' design system is a **warm, confident retail flagship** wearing the green of their storefront apron across every surface.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#faf6ee",
+        "surface": "#d4e9e2",
+        "ink": "#111111",
+        "primary": "#006241",
+        "accent": null,
+        "hairline": null
+      },
+      "type": {
+        "display": "SoDoSans",
+        "body": null,
+        "displayWeight": null,
+        "tracking": null
+      },
+      "radius": null,
+      "source": "markdown"
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "vibe": "An inspired interpretation of Stripi's design language — a financial-infrastructure brand built on a deep navy ink, an electric indigo primary, and a recurring atmospheric gradient mesh that occupies the upper…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": null,
+        "ink": "#0d253d",
+        "primary": "#533afd",
+        "accent": null,
+        "hairline": "#e3e8ee"
+      },
+      "type": {
+        "display": "sohne-var, 'SF Pro Display', system-ui, -apple-system, sans-serif",
+        "body": "sohne-var, 'SF Pro Display', system-ui, -apple-system, sans-serif",
+        "displayWeight": 300,
+        "tracking": -1.4
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase",
+      "vibe": "An inspired interpretation of Supabaze's design language — an open-source database platform built on a clean white-and-near-black system with a single signature emerald-green CTA, a custom humanist sans…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": null,
+        "ink": "#171717",
+        "primary": "#3ecf8e",
+        "accent": "#6b01c2",
+        "hairline": "#dfdfdf"
+      },
+      "type": {
+        "display": "Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif",
+        "body": "Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif",
+        "displayWeight": 500,
+        "tracking": -1.92
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "superhuman",
+      "name": "Superhuman",
+      "vibe": "An inspired interpretation of Superhumon's design language — a fast-email productivity brand split between an editorial dark hero (deep indigo navy with violet-sky atmospheric backdrop and a portrait subject)…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#c9b4fa",
+        "ink": "#292827",
+        "primary": "#1b1938",
+        "accent": null,
+        "hairline": "#e8e4dd"
+      },
+      "type": {
+        "display": "'Super Sans VF', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+        "body": "'Super Sans VF', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+        "displayWeight": 540,
+        "tracking": -1.32
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "tesla",
+      "name": "Tesla",
+      "vibe": "Tesla's website is an exercise in radical subtraction — a digital showroom where the product is everything and the interface is almost nothing.",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": null,
+        "ink": "#171a20",
+        "primary": "#3e6ae1",
+        "accent": null,
+        "hairline": "#eeeeee"
+      },
+      "type": {
+        "display": "Universal Sans Display",
+        "body": "Universal Sans Text",
+        "displayWeight": null,
+        "tracking": null
+      },
+      "radius": null,
+      "source": "markdown"
+    },
+    {
+      "id": "theverge",
+      "name": "The Verge",
+      "vibe": "The Verge's 2024 redesign feels like somebody wired a Condé Nast magazine to a chiptune soundboard.",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#131313",
+        "surface": "#2d2d2d",
+        "ink": "#ffffff",
+        "primary": "#3cffd0",
+        "accent": null,
+        "hairline": "#309875"
+      },
+      "type": {
+        "display": "Manuka",
+        "body": null,
+        "displayWeight": null,
+        "tracking": null
+      },
+      "radius": null,
+      "source": "markdown"
+    },
+    {
+      "id": "together.ai",
+      "name": "Together AI",
+      "vibe": "An inspired interpretation of Together AI's design language — an AI infrastructure platform whose surface alternates between near-black hero bands (with a three-color orange-magenta-periwinkle gradient as the…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#313641",
+        "ink": "#000000",
+        "primary": "#000000",
+        "accent": "#fc4c02",
+        "hairline": "#959494"
+      },
+      "type": {
+        "display": "The Future, Inter, Helvetica Neue, Arial, sans-serif",
+        "body": "The Future, Inter, Helvetica Neue, Arial, sans-serif",
+        "displayWeight": 500,
+        "tracking": -1.92
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "uber",
+      "name": "Uber",
+      "vibe": "An inspired interpretation of Uber's design language — a transportation-and-delivery super-app brand whose web surface is a black-and-white duet, framed by a custom geometric display sans, accented by a single…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": "#e2e2e2",
+        "ink": "#000000",
+        "primary": "#000000",
+        "accent": null,
+        "hairline": "#4b4b4b"
+      },
+      "type": {
+        "display": "UberMove, UberMoveText, system-ui, Helvetica Neue, Arial, sans-serif",
+        "body": "UberMoveText, system-ui, Helvetica Neue, Arial, sans-serif",
+        "displayWeight": 700,
+        "tracking": null
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "vibe": "An inspired interpretation of Vercel's design language — a developer-platform brand whose surface is a stark black-and-ink duet on near-white canvas, broken at hero scale by a multi-color mesh gradient (cyan /…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": null,
+        "ink": "#171717",
+        "primary": "#171717",
+        "accent": null,
+        "hairline": "#ebebeb"
+      },
+      "type": {
+        "display": "Geist, Inter, system-ui, -apple-system, sans-serif",
+        "body": "Geist, Inter, system-ui, -apple-system, sans-serif",
+        "displayWeight": 600,
+        "tracking": -2.4
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "vodafone",
+      "name": "Vodafone",
+      "vibe": "An inspired interpretation of Vodafone's design language — a telecom super-brand whose web surface alternates between editorial photography hero bands with massive uppercase display headlines and clean white…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": null,
+        "ink": "#25282b",
+        "primary": "#e60000",
+        "accent": null,
+        "hairline": null
+      },
+      "type": {
+        "display": "Vodafone, Vodafone Rg, Helvetica Neue, Arial, sans-serif",
+        "body": "Vodafone, Vodafone Rg, Helvetica Neue, Arial, sans-serif",
+        "displayWeight": 800,
+        "tracking": -1
+      },
+      "radius": "6px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "voltagent",
+      "name": "Voltagent",
+      "vibe": "An inspired interpretation of Voltagent's design language — a developer-focused AI agent engineering platform whose surface is an unrelenting near-black canvas broken only by a single electric-green brand…",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#101010",
+        "surface": null,
+        "ink": "#f2f2f2",
+        "primary": "#00d992",
+        "accent": null,
+        "hairline": "#3d3a39"
+      },
+      "type": {
+        "display": "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+        "body": "Inter, system-ui, -apple-system, sans-serif",
+        "displayWeight": 400,
+        "tracking": -0.9
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "warp",
+      "name": "Warp",
+      "vibe": "An inspired interpretation of Warp's design language — an agentic terminal-and-development-environment brand whose surface is a warm near-charcoal canvas (a tint warmer than pure black), broken only by clean…",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#2b2622",
+        "surface": null,
+        "ink": "#f7f5f0",
+        "primary": "#f7f5f0",
+        "accent": null,
+        "hairline": "#3f3a36"
+      },
+      "type": {
+        "display": "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+        "body": "Inter, system-ui, -apple-system, sans-serif",
+        "displayWeight": 400,
+        "tracking": -1.6
+      },
+      "radius": "4px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "webflow",
+      "name": "Webflow",
+      "vibe": "An inspired interpretation of Webflow's design language — a visual web development platform whose surface contrasts a deep near-black #080808 primary against a generous white canvas, broken by a five-stop…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": null,
+        "ink": "#080808",
+        "primary": "#080808",
+        "accent": "#7a3dff",
+        "hairline": "#d8d8d8"
+      },
+      "type": {
+        "display": "WF Visual Sans Variable, Inter, system-ui, -apple-system, sans-serif",
+        "body": "WF Visual Sans Variable, Inter, system-ui, sans-serif",
+        "displayWeight": 600,
+        "tracking": -0.8
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "wired",
+      "name": "Wired",
+      "vibe": "An inspired interpretation of Wired's design language — a flagship technology-magazine brand whose surface is a strict editorial duet of stark black wordmark on white canvas, anchored by a tall narrow custom…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": null,
+        "ink": "#000000",
+        "primary": "#000000",
+        "accent": null,
+        "hairline": "#e0e0e0"
+      },
+      "type": {
+        "display": "WiredDisplay, \"Times New Roman\", Georgia, serif",
+        "body": "BreveText, Georgia, \"Times New Roman\", serif",
+        "displayWeight": 400,
+        "tracking": -0.5
+      },
+      "radius": "0px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "wise",
+      "name": "Wise",
+      "vibe": "An inspired interpretation of Wise's design language — a global money-transfer brand whose surface combines an unusually heavy near-black display sans (weight 900 at 64–126 px) with a vivid lime-green brand…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#ffffff",
+        "surface": null,
+        "ink": "#0e0f0c",
+        "primary": "#9fe870",
+        "accent": "#ffc091",
+        "hairline": null
+      },
+      "type": {
+        "display": "Wise Sans, Inter, system-ui, -apple-system, sans-serif",
+        "body": "Inter, system-ui, sans-serif",
+        "displayWeight": 900,
+        "tracking": -0.96
+      },
+      "radius": "12px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "x.ai",
+      "name": "xAI",
+      "vibe": "An inspired interpretation of xAI's design language — Elon Musk's frontier-AI company whose web surface is a strict near-black canvas broken only by white pill outlines, occasional warm sunset / dusk gradient…",
+      "mode": "dark",
+      "tokens": {
+        "canvas": "#0a0a0a",
+        "surface": null,
+        "ink": "#ffffff",
+        "primary": "#ffffff",
+        "accent": "#ff7a17",
+        "hairline": "#212327"
+      },
+      "type": {
+        "display": "universalSans, Inter, system-ui, -apple-system, sans-serif",
+        "body": "universalSans, Inter, system-ui, sans-serif",
+        "displayWeight": 400,
+        "tracking": -2.4
+      },
+      "radius": "8px",
+      "source": "frontmatter"
+    },
+    {
+      "id": "zapier",
+      "name": "Zapier",
+      "vibe": "An inspired interpretation of Zapier's design language — a workflow-automation platform whose surface combines warm-cream neutrals (#fffefb canvas, #f8f4f0 soft cream) with deep coffee ink (#201515) and a…",
+      "mode": "light",
+      "tokens": {
+        "canvas": "#fffefb",
+        "surface": null,
+        "ink": "#201515",
+        "primary": "#ff4f00",
+        "accent": null,
+        "hairline": null
+      },
+      "type": {
+        "display": "Degular Display, Inter, system-ui, -apple-system, sans-serif",
+        "body": "Inter, system-ui, sans-serif",
+        "displayWeight": 500,
+        "tracking": -0.6
+      },
+      "radius": "12px",
+      "source": "frontmatter"
+    }
+  ]
+}

@@ -677,8 +677,26 @@ export const entrada = {
 
   google: {
     botao: "Continuar com Google",
-    /** Fica abaixo do botão: promete menos do que o botão sugere, de propósito. */
+    /** Fica abaixo do botão quando as chaves NÃO estão no ambiente. */
     ajuda: "Ainda não está conectado. O botão mostra o passo a passo de configuração.",
+    /** E este quando estão: aí o botão faz login de verdade. */
+    ajudaLigado: "Você vai para o Google escolher a conta e volta para cá já dentro do app.",
+
+    /**
+     * O que aparece quando uma volta do Google não deu certo. A chave é o
+     * `?google=` do endereço, escrito pelas rotas de `src/app/api/auth`.
+     * Motivo que não estiver nesta lista não vira mensagem nenhuma: o endereço
+     * é editável por qualquer pessoa, e texto vindo de lá não entra na tela.
+     */
+    avisos: {
+      cancelado: "Você fechou a tela do Google antes de escolher a conta. Pode tentar de novo.",
+      expirado: "A tentativa demorou demais e expirou por segurança. Clique de novo no botão.",
+      incompleto: "O Google devolveu uma resposta incompleta. Tente mais uma vez.",
+      falhou:
+        "O Google recusou as credenciais deste app. Confira o Client ID, o Client Secret e o endereço de retorno cadastrado.",
+      indisponivel:
+        "O login com Google ainda não está configurado neste app. Use a entrada sem senha por enquanto.",
+    },
   },
 
   separador: "ou",
@@ -756,9 +774,9 @@ export const entrada = {
       {
         titulo: "Guarde as duas chaves no projeto",
         texto:
-          "Ao salvar, o Google mostra o Client ID e o Client Secret. Crie um arquivo chamado .env.local na raiz do projeto, cole as duas linhas abaixo e troque o texto depois do “=” pelos valores que apareceram. Depois pare o servidor e rode npm run dev de novo.",
+          "Ao salvar, o Google mostra o Client ID e o Client Secret. Crie um arquivo chamado .env.local na raiz do projeto e cole as três linhas abaixo, trocando o texto depois do “=” pelos valores que apareceram. A terceira é sua, e não vem do Google: é o segredo que assina a sua sessão, e pode ser qualquer texto embaralhado com 32 letras ou mais (no terminal, openssl rand -base64 32 gera um). Depois pare o servidor e rode npm run dev de novo.",
         codigo:
-          "GOOGLE_CLIENT_ID=cole-aqui-o-seu-client-id\nGOOGLE_CLIENT_SECRET=cole-aqui-o-seu-client-secret",
+          "GOOGLE_CLIENT_ID=cole-aqui-o-seu-client-id\nGOOGLE_CLIENT_SECRET=cole-aqui-o-seu-client-secret\nAUTH_SECRET=cole-aqui-um-texto-aleatorio-longo",
         codigoRotulo: ".env.local",
       },
     ],
@@ -766,7 +784,7 @@ export const entrada = {
     nota: "O .env.local não vai para o Git, e não deve ir. O Client Secret é uma senha: se ele vazar, gere outro no mesmo lugar em que criou.",
 
     aviso:
-      "Conectar o Google de verdade é assunto do workshop. Por enquanto, use o botão abaixo pra entrar direto.",
+      "Assim que as três linhas estiverem no .env.local, este botão passa a fazer login de verdade, sem você mexer em código nenhum. Enquanto isso, use o botão abaixo pra entrar direto.",
 
     fechar: "Entendi",
     copiar: "Copiar",

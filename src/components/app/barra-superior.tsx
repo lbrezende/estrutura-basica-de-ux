@@ -54,7 +54,11 @@ export function BarraSuperior({
       </Link>
 
       <div className="ml-auto flex min-w-0 items-center gap-2 sm:gap-3">
-        <div className="flex min-w-0 items-center gap-2.5">
+        <div
+          // O tour de boas-vindas aponta pra este bloco. Ver src/content/tour.ts.
+          data-tour="perfil"
+          className="flex min-w-0 items-center gap-2.5"
+        >
           <span
             aria-hidden="true"
             // `.realce-interno` é a luz de cima e o peso de baixo em sombra

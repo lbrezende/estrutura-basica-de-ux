@@ -42,12 +42,16 @@ npm run build
 | Tela | Endereço | O que tem |
 |---|---|---|
 | Landing | `/` | Herói, prévia do produto, benefícios, como funciona, planos, time e rodapé |
-| Entrada | `/entrar` | Formulário e um modal que ensina o passo a passo do login com Google |
+| Entrada | `/entrar` | Login com Google pronto (esperando a chave) e entrada sem senha |
 | Painel | `/app` | Indicadores do período, pedidos por etapa, próximos compromissos |
 | Clientes | `/app/clientes` | Lista, busca, cadastro, edição, remoção e ficha lateral |
 | Pedidos | `/app/pedidos` | Quadro kanban com quatro colunas, prioridade, valor e prazo |
 | Agenda | `/app/agenda` | Visão de semana e visão de lista |
 | Configurações | `/app/configuracoes` | Troca de design system (71 opções), dados de exemplo e perfil |
+
+Na primeira vez que você entra no `/app`, um tour de cinco paradas apresenta o
+app. Ele roda uma vez só, fecha no Esc, e tem um botão em Configurações pra ver
+de novo. O texto dele está em `src/content/tour.ts`.
 
 Também já está pronto:
 
@@ -61,14 +65,11 @@ Também já está pronto:
 
 ---
 
-## O que NÃO existe (e por quê)
+## O que vem desligado (e como ligar)
 
-Este app **não tem** banco de dados, servidor, login de verdade nem pagamento.
-
-Os dados ficam guardados no seu próprio navegador. Se você abrir em outro
-computador, começa do zero. Se limpar os dados do site, some tudo. O botão
-"Entrar com Google" abre um modal explicando como seria. Ele não autentica
-ninguém.
+Recém-baixado, o app não usa banco, não usa servidor de sessão e não autentica
+ninguém. Os dados ficam no seu próprio navegador: abriu em outro computador,
+começa do zero; limpou os dados do site, some tudo.
 
 Isso é **de propósito**, por três motivos:
 
@@ -77,10 +78,20 @@ Isso é **de propósito**, por três motivos:
 2. **Nada quebra.** Não tem servidor para cair nem cota para estourar. Você
    pode apagar tudo e restaurar os exemplos quantas vezes quiser.
 3. **O foco é a experiência.** Seu exercício é de UX, não de infraestrutura.
-   Um banco de dados não deixaria o produto melhor de usar, só mais difícil de
-   ligar.
 
-Quando quiser plugar as coisas de verdade, o roteiro está em
+**Mas o código das duas peças mais pedidas já está escrito.** Login com Google e
+banco no Neon não são exercício de programação aqui: eles estão prontos e
+desligados, esperando chave.
+
+| Ligar | O que fazer | O que muda |
+|---|---|---|
+| **Login com Google** | Três linhas no `.env.local` (o modal em `/entrar` ensina a pegar cada uma) | O botão passa a autenticar de verdade, e a sessão vira um cookie assinado no servidor |
+| **Banco no Neon** | Uma linha no `.env.local` com a conexão | O app cria a tabela sozinho e passa a guardar no Postgres. Nenhuma tela muda |
+
+Sem as chaves, tudo continua funcionando do jeito que está. Com elas, funciona
+melhor. Você não escreve código nem em um caso nem no outro.
+
+O roteiro completo, incluindo e-mail, WhatsApp e automações, está em
 [`PROXIMOS-PASSOS.md`](./PROXIMOS-PASSOS.md).
 
 ---
@@ -148,9 +159,10 @@ configuração nenhuma.
 
 Toda vez que você atualizar o código no GitHub, a Vercel publica sozinha.
 
-> Como não existe banco de dados, cada visitante do seu link vê os dados de
-> exemplo e mexe na própria cópia, no próprio navegador. Ninguém vê os dados de
-> ninguém. Pra portfólio, é exatamente o que você quer.
+> Sem `DATABASE_URL`, cada visitante do seu link vê os dados de exemplo e mexe
+> na própria cópia, no próprio navegador. Ninguém vê os dados de ninguém. Pra
+> portfólio, é exatamente o que você quer. Se você ligar o banco, isso muda:
+> passa a ser um só conjunto de dados, compartilhado por quem abrir o endereço.
 
 ---
 
@@ -162,6 +174,7 @@ Toda vez que você atualizar o código no GitHub, a Vercel publica sozinha.
 ├── PROMPT.md                 ← O prompt que transforma o app no seu produto.
 ├── PROXIMOS-PASSOS.md        ← Roteiro para plugar login, banco, e-mail etc.
 ├── .env.example              ← Modelo de arquivo de senhas (todos vazios).
+├── banco/schema.sql          ← O desenho da tabela que o app cria sozinho no Neon.
 ├── n8n/                      ← Automações. Opcional, o app roda sem isso.
 ├── public/                   ← Imagens e ícones servidos direto (favicon, svg).
 └── src/
@@ -173,6 +186,7 @@ Toda vez que você atualizar o código no GitHub, a Vercel publica sozinha.
     │   ├── layout.tsx        ← A moldura de todas as páginas
     │   ├── globals.css       ← Onde os tokens do design system viram CSS
     │   ├── entrar/           ← /entrar
+    │   ├── api/              ← O servidor: login com Google e porta do banco
     │   └── app/              ← A área logada
     │       ├── page.tsx      ← /app, o painel
     │       ├── clientes/     ← /app/clientes
@@ -184,11 +198,15 @@ Toda vez que você atualizar o código no GitHub, a Vercel publica sozinha.
     │   ├── ui/               ← Os primitivos: botão, campo, card, modal, badge
     │   ├── marketing/        ← As dobras da landing
     │   ├── auth/             ← Tela de entrada e modal do Google
+    │   ├── onboarding/       ← O tour de boas-vindas da primeira visita
     │   └── app/              ← As peças da área logada, por tela
     │
     └── lib/                  ← O motor. Mexa aqui só quando souber o que faz.
         ├── types.ts          ← O formato dos dados (Cliente, Pedido, Agendamento)
         ├── store.ts          ← Onde os dados são guardados e alterados
+        ├── banco.ts          ← A conversa com o Postgres, quando ele estiver ligado
+        ├── google.ts         ← O login com Google, esperando as chaves
+        ├── sessao-servidor.ts ← O cookie assinado de quem entrou
         ├── seed.ts           ← Os dados de exemplo
         ├── design-system.ts  ← Ponte entre o design-system.json e o CSS
         ├── design-systems.json ← Catálogo dos 71 visuais prontos

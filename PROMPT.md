@@ -13,9 +13,11 @@ Um SaaS completo e funcionando: landing page de venda, tela de entrada, painel
 com indicadores, cadastro de clientes, quadro de pedidos em kanban e agenda
 semanal. Tudo responsivo, acessível e com um design system trocável.
 
-Os dados ficam no seu navegador (localStorage). Não existe servidor, banco nem
-login de verdade, e isso é de propósito: você foca na experiência, não em
-infraestrutura.
+Os dados ficam no seu navegador (localStorage) e ninguém precisa se autenticar,
+e isso é de propósito: você foca na experiência, não em infraestrutura. O login
+com Google e o banco no Neon já estão escritos e desligados no projeto, esperando
+só as chaves no `.env.local`, então ligar cada um é preencher uma linha, não
+programar.
 
 Portanto: **não falta nada para você começar a redesenhar.** O que falta são as
 palavras e as cores que fazem dele *o seu* produto.

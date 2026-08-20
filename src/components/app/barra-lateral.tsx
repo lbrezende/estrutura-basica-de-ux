@@ -112,6 +112,8 @@ export function BarraLateral({ aberta, aoFechar }: PropsBarraLateral) {
         </div>
 
         <nav
+          // O tour de boas-vindas aponta pra este bloco. Ver src/content/tour.ts.
+          data-tour="menu"
           aria-label={sistema.casca.navegacao}
           className="flex-1 overflow-y-auto px-3 py-4"
         >

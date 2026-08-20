@@ -5,12 +5,17 @@ import { useRouter } from "next/navigation"
 import { BarraLateral } from "@/components/app/barra-lateral"
 import { BarraSuperior } from "@/components/app/barra-superior"
 import { Logo } from "@/components/app/logo"
+import { Tour } from "@/components/onboarding/tour"
 import { sistema } from "@/content/site"
-import { sair, useSessao } from "@/lib/store"
+import { sair, useDados, useSessao } from "@/lib/store"
 
 export default function LayoutSistema({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const sessao = useSessao()
+  // O store ainda não sabe se os dados moram no navegador ou no banco. Enquanto
+  // não souber, a casca segura o esqueleto: mostrar os dados de exemplo e
+  // trocar depois pelos do banco seria piscar conteúdo falso na tela.
+  const { carregando } = useDados()
   const [menuAberto, setMenuAberto] = useState(false)
   const [hidratado, setHidratado] = useState(false)
   const refBotaoMenu = useRef<HTMLButtonElement>(null)
@@ -45,7 +50,7 @@ export default function LayoutSistema({ children }: { children: React.ReactNode 
     router.replace("/entrar")
   }, [router])
 
-  if (!hidratado || !sessao) return <EsqueletoSistema />
+  if (!hidratado || !sessao || carregando) return <EsqueletoSistema />
 
   return (
     <div className="min-h-dvh bg-canvas">
@@ -70,12 +75,19 @@ export default function LayoutSistema({ children }: { children: React.ReactNode 
 
         <main
           id="conteudo"
+          // O tour de boas-vindas aponta pra este bloco. Ver src/content/tour.ts.
+          data-tour="conteudo"
           tabIndex={-1}
           className="mx-auto w-full max-w-[1200px] px-4 py-6 focus:outline-none sm:px-6 lg:px-8 lg:py-8"
         >
           {children}
         </main>
       </div>
+
+      {/* Roda uma vez, na primeira visita, e não desenha nada fora disso. Fica
+          aqui na casca porque as paradas apontam pro menu e pro topo, que só
+          existem depois que a sessão confirma. */}
+      <Tour />
     </div>
   )
 }

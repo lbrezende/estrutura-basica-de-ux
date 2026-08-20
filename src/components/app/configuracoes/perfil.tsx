@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { z } from "zod"
 import { Icone } from "@/components/app/icone"
+import { useRodarTour } from "@/components/onboarding/tour"
 import {
   Button,
   Card,
@@ -15,6 +16,7 @@ import {
   Input,
 } from "@/components/ui"
 import { sistema as textos } from "@/content/site"
+import { tour } from "@/content/tour"
 import { entrar, sair, useSessao } from "@/lib/store"
 
 const copy = textos.configuracoes.perfil
@@ -29,6 +31,7 @@ type Erros = { nome?: string; email?: string }
 export function Perfil() {
   const router = useRouter()
   const sessao = useSessao()
+  const rodarTour = useRodarTour()
   const [nome, setNome] = useState("")
   const [email, setEmail] = useState("")
   const [erros, setErros] = useState<Erros>({})
@@ -66,14 +69,10 @@ export function Perfil() {
       return
     }
 
+    // O `entrar` avisa a própria aba, então o nome no topo do app troca na hora.
     entrar(resultado.data.nome, resultado.data.email)
     setErros({})
     setSalvo(true)
-
-    // `useSessao` só escuta o evento `storage`, que o navegador dispara apenas
-    // para as OUTRAS abas. Sem este empurrão, o nome no topo do app continuaria
-    // o antigo até a próxima navegação.
-    window.dispatchEvent(new Event("storage"))
   }
 
   function encerrar() {
@@ -138,6 +137,13 @@ export function Perfil() {
       <CardRodape divisor>
         <Button variante="secundaria" onClick={encerrar} iconeEsquerda={<Icone nome="sair" />}>
           {copy.sair}
+        </Button>
+
+        {/* O tour de boas-vindas roda uma vez e some. Quem quiser rever, revê:
+            escondê-lo pra sempre depois do primeiro fechamento transformaria
+            uma ajuda em algo que a pessoa perdeu por clicar rápido demais. */}
+        <Button variante="fantasma" onClick={rodarTour} iconeEsquerda={<Icone nome="ajuda" />}>
+          {tour.rever.acao}
         </Button>
       </CardRodape>
     </Card>

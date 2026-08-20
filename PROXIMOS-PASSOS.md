@@ -7,8 +7,11 @@ comandos.
 Este arquivo é o mapa do que vem **depois**, quando você quiser que ele deixe
 de ser uma maquete e vire um produto de verdade.
 
-**Não é um passo a passo.** Cada item explica o que é, por que vale a pena e
-onde está a documentação oficial. Ligar cada um é o exercício.
+**Os dois primeiros já estão construídos.** O login com Google e o banco no Neon
+não são exercício: o código está escrito, testado e desligado, esperando só as
+chaves. Você preenche o `.env.local`, reinicia o servidor e a funcionalidade
+liga. Do terceiro em diante volta a ser mapa: o que é, por que vale a pena e
+onde está a documentação oficial.
 
 ---
 
@@ -16,8 +19,8 @@ onde está a documentação oficial. Ligar cada um é o exercício.
 
 Faça na ordem abaixo. Cada item depende do anterior estar de pé:
 
-- [ ] 1. **Login com Google**: saber *quem* está usando
-- [ ] 2. **Banco de dados (Neon)**: ter *onde* guardar
+- [ ] 1. **Login com Google**: saber *quem* está usando · *já construído, falta a chave*
+- [ ] 2. **Banco de dados (Neon)**: ter *onde* guardar · *já construído, falta a conexão*
 - [ ] 3. **E-mail (Resend)**: falar com quem usa
 - [ ] 4. **WhatsApp**: falar onde a pessoa realmente lê
 - [ ] 5. **n8n**: fazer tudo isso acontecer sozinho
@@ -32,34 +35,45 @@ Faça na ordem abaixo. Cada item depende do anterior estar de pé:
 
 ## 1. Login com Google
 
-**O que é.** Hoje o botão "Entrar com Google" abre um modal que *explica* como
-seria. Não existe autenticação: qualquer nome e e-mail entram, e a sessão fica
-guardada no navegador. Ligar isso de verdade significa a pessoa clicar, escolher
-a conta Google dela e voltar autenticada.
+> **Já está construído.** Falta só a chave.
 
-**Por que vale a pena.** É o primeiro item porque tudo depois depende dele. Sem
-saber quem é a pessoa, não existe "os pedidos *dela*", só "os pedidos". Login é
-o que separa uma demonstração de um produto multiusuário.
+**O que fazer.** Abra o app, vá em `/entrar` e clique em "Continuar com Google".
+O modal que abre é o passo a passo completo no Google Cloud Console, com cada
+valor pronto para copiar. No fim ele te dá três linhas para colar no
+`.env.local`. Cole, reinicie o servidor, e o mesmo botão passa a fazer login de
+verdade: a pessoa escolhe a conta Google, volta autenticada e o nome dela
+aparece no topo do app.
 
-Como designer, é aqui que você encosta na parte mais subestimada da experiência:
-o que acontece quando a pessoa cancela no meio, quando volta depois de um mês,
-quando entra com a conta errada.
+**Por que é o primeiro item.** Sem saber quem é a pessoa, não existe "os pedidos
+*dela*", só "os pedidos". Login é o que separa uma demonstração de um produto
+multiusuário.
 
-**Onde está.** Você vai precisar de duas coisas: uma biblioteca de autenticação
-no app e uma credencial no Google.
+E é aqui que você, como designer, encosta na parte mais subestimada da
+experiência: o que acontece quando a pessoa cancela no meio, quando o link
+expira, quando ela entra com a conta errada. Os três casos já têm mensagem
+escrita neste app (procure `avisos` em `src/content/site.ts`); a pergunta que
+sobra é se são as mensagens certas.
 
-- Auth.js (a biblioteca padrão do Next.js): <https://authjs.dev/getting-started/authentication/oauth>
-- Credencial do Google: <https://console.cloud.google.com/apis/credentials>
+**Onde o código está.**
 
-**Variáveis:** `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` (veja o `.env.example`)
+- `src/lib/google.ts`: a ida e a volta do OAuth, escritas na mão, sem biblioteca
+- `src/lib/sessao-servidor.ts`: o cookie assinado que guarda quem entrou
+- `src/app/api/auth/`: as três rotas (ir para o Google, voltar dele, e sair)
+
+**Variáveis:** `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `AUTH_SECRET`
+(veja o `.env.example`)
+
+**Credencial do Google:** <https://console.cloud.google.com/apis/credentials>
 
 ---
 
 ## 2. Banco de dados (Neon)
 
-**O que é.** Hoje os dados vivem no `localStorage` do navegador. Trocou de
-computador, começou do zero. Limpou os dados do site, sumiu tudo. Um banco de
-dados guarda isso num servidor, de forma permanente.
+> **Já está construído.** Falta só a conexão.
+
+**O que é.** Sem `DATABASE_URL`, os dados vivem no `localStorage` do navegador:
+trocou de computador, começou do zero; limpou os dados do site, sumiu tudo. Com
+ela, o mesmo app passa a guardar num Postgres na nuvem, de forma permanente.
 
 O Neon é um Postgres que roda na nuvem, tem plano gratuito generoso e liga na
 Vercel em dois cliques.
@@ -68,11 +82,36 @@ Vercel em dois cliques.
 Também é o que permite duas pessoas usarem o mesmo sistema, que é o começo de
 qualquer coisa colaborativa.
 
-Detalhe importante para você: o arquivo `src/lib/store.ts` foi escrito com a
-mesma cara que uma versão com banco teria (`criarCliente`, `atualizarPedido`,
-`removerAgendamento`). A troca é por dentro; nenhuma tela precisa mudar.
+**O que fazer.** Crie um projeto em <https://console.neon.tech> (o plano
+gratuito basta), copie a *connection string* do painel e cole no `.env.local`:
 
-**Onde está.** <https://neon.com/docs/introduction>
+```
+DATABASE_URL=postgresql://usuario:senha@servidor/banco?sslmode=require
+```
+
+Reinicie o servidor. Na primeira vez que o app fala com o banco ele cria a
+tabela sozinho, e a partir daí é o Postgres que guarda tudo. Nenhuma tela muda,
+nenhuma linha de código muda. Para conferir que ligou, cadastre alguma coisa e
+abra o app em outro navegador: o que você cadastrou está lá.
+
+Se a conexão estiver errada ou o banco fora do ar, o app **não quebra**: ele
+volta a guardar no navegador e registra o erro no terminal. É de propósito, para
+uma configuração errada não derrubar a tela de ninguém.
+
+**Onde o código está.**
+
+- `src/lib/banco.ts`: a conversa com o Postgres
+- `src/app/api/dados/route.ts`: a porta que o navegador usa
+- `banco/schema.sql`: o desenho da tabela, e o desenho seguinte quando você
+  quiser ir além de uma tabela só
+
+**Uma coisa que ainda falta, e é o exercício de verdade:** a rota `/api/dados`
+não pergunta *quem* está chamando. Na sua máquina não faz diferença; publicado,
+qualquer pessoa com o endereço lê e grava. Amarrar cada registro à sessão
+assinada do item 1 é o próximo passo natural, e é onde login e banco viram uma
+coisa só.
+
+**Documentação:** <https://neon.com/docs/introduction>
 
 **Variável:** `DATABASE_URL`
 

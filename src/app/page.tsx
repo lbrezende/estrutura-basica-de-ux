@@ -3,6 +3,7 @@ import { CabecalhoMarketing } from "@/components/marketing/cabecalho-marketing"
 import { ComoFunciona } from "@/components/marketing/como-funciona"
 import { Divisor } from "@/components/marketing/divisor"
 import { Heroi } from "@/components/marketing/heroi"
+import { Tour } from "@/components/onboarding/tour"
 import { Planos } from "@/components/marketing/planos"
 import { RodapeMarketing } from "@/components/marketing/rodape-marketing"
 import { Time } from "@/components/marketing/time"
@@ -25,6 +26,10 @@ export default function PaginaInicial() {
   return (
     <div className="flex min-h-dvh flex-col">
       <CabecalhoMarketing />
+
+      {/* A primeira parada do tour de boas-vindas mora aqui, ancorada no botão
+          de entrar. Da segunda em diante, quem retoma é a casca do app. */}
+      <Tour />
 
       {/* `tabIndex={-1}` é o que faz o "Pular para o conteúdo" realmente mover
           o foco para cá, e não só rolar a página. */}

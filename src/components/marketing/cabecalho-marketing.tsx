@@ -51,7 +51,13 @@ export function CabecalhoMarketing() {
           </ul>
         </nav>
 
-        <BotaoLink href="/entrar" tamanho="sm" className="ml-auto shrink-0 md:ml-3">
+        {/* O tour de boas-vindas começa aqui. Ver src/content/tour.ts. */}
+        <BotaoLink
+          href="/entrar"
+          tamanho="sm"
+          data-tour="entrar"
+          className="ml-auto shrink-0 md:ml-3"
+        >
           {landing.cabecalho.entrar}
         </BotaoLink>
       </div>

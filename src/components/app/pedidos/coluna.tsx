@@ -64,7 +64,10 @@ export function Coluna({
       onDragLeave={aoArrastarFora}
       onDrop={aoSoltar}
       className={cn(
-        "flex w-[17.5rem] shrink-0 snap-start flex-col rounded-ds border transition-colors duration-150 xl:w-auto",
+        // Largura cheia no celular (o quadro empilha) e coluna de 17,5rem a
+        // partir do tablet, quando o quadro volta a rolar de lado.
+        "flex w-full flex-col rounded-ds border transition-colors duration-150",
+        "sm:w-[17.5rem] sm:shrink-0 sm:snap-start xl:w-auto",
         // A coluna é um degrau ABAIXO do cartão (`elevated` diluído), senão em
         // temas onde canvas e surface são a mesma cor os dois somem juntos. O
         // degradê vertical faz o topo da pilha pegar luz e a base assentar.

@@ -24,7 +24,7 @@ export function RodapeMarketing() {
               <li key={link.rotulo}>
                 <a
                   href={link.href}
-                  className="inline-flex items-center rounded-ds px-3 py-2 text-sm text-muted transition-colors hover:text-ink pointer-coarse:min-h-11"
+                  className="inline-flex items-center rounded-ds px-3 py-2 text-sm text-muted transition-colors hover:text-ink min-h-[var(--ds-toque)]"
                 >
                   {link.rotulo}
                 </a>

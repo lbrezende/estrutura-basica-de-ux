@@ -125,7 +125,7 @@ function LinkAgenda({ rotulo }: { rotulo: string }) {
   return (
     <Link
       href="/app/agenda"
-      className="inline-flex items-center gap-1.5 rounded-ds text-sm font-medium text-primary transition-colors hover:text-primary-hover"
+      className="inline-flex min-h-[var(--ds-toque)] items-center gap-1.5 rounded-ds text-sm font-medium text-primary transition-colors hover:text-primary-hover"
     >
       {rotulo}
       <Icone nome="seta-direita" className="size-4" />

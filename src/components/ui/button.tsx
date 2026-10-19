@@ -29,11 +29,11 @@ export type ButtonProps = ComponentPropsWithRef<"button"> & {
 const BASE =
   "inline-flex select-none items-center justify-center rounded-ds font-medium whitespace-nowrap " +
   "transition-[background-color,border-color,color,opacity,filter] duration-150 " +
-  "active:translate-y-px disabled:pointer-events-none disabled:opacity-50 " +
-  // 44px é o mínimo confortável para o dedo. Só onde o ponteiro é grosso, para
-  // não inchar a interface de quem usa mouse. É a mesma regra que o briefing
-  // entregue ao aluno cobra, então o app tem que cumprir.
-  "pointer-coarse:min-h-11 pointer-coarse:min-w-11"
+  "active:translate-y-px disabled:pointer-events-none disabled:opacity-50"
+
+// O piso de 44 por 44 do alvo de toque agora é global (`--ds-toque` no
+// globals.css) e vale para ponteiro fino também: quem entrega usa o celular com
+// uma mão só, e o mouse não é motivo pra alvo pequeno.
 
 /**
  * As receitas de acabamento moram no `globals.css` e valem nos 71 temas.
@@ -53,17 +53,23 @@ const VARIANTES: Record<VarianteBotao, string> = {
   perigo: "realce-topo bg-danger text-canvas shadow-sm hover:brightness-[1.08]",
 }
 
+/*
+  As alturas ficam abaixo dos 44px de propósito: o piso global as levanta até lá.
+  Quem manda no tamanho, então, é o padding lateral e o corpo do texto — e o `lg`
+  passa dos 44 por conta própria, pra que o CTA da landing continue maior que um
+  botão de lista.
+*/
 const TAMANHOS: Record<TamanhoBotao, string> = {
   sm: "h-8 gap-1.5 px-3 text-[13px] [&_svg]:size-3.5",
   md: "h-10 gap-2 px-4 text-sm [&_svg]:size-4",
-  lg: "h-12 gap-2 px-6 text-[15px] [&_svg]:size-[18px]",
+  lg: "h-14 gap-2 px-6 text-[15px] [&_svg]:size-[18px]",
 }
 
 /** Sem rótulo o botão vira quadrado, senão o ícone fica solto no meio do padding. */
 const SO_ICONE: Record<TamanhoBotao, string> = {
   sm: "w-8 px-0",
   md: "w-10 px-0",
-  lg: "w-12 px-0",
+  lg: "w-14 px-0",
 }
 
 /** O chip é redondo e quase da altura do botão. Sobra pouco espaço à direita. */

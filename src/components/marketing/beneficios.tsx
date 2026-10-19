@@ -24,7 +24,10 @@ export function Beneficios() {
           {beneficios.titulo}
         </h2>
 
-        <ul className="mt-10 grid gap-4 md:grid-cols-3 md:gap-5 lg:mt-12">
+        {/* Duas colunas no tablet e quatro no desktop: a quantidade de benefícios
+            é ditada pelo `site.ts`, e a grade tem que aguentar tanto 3 quanto 4
+            sem deixar um cartão órfão numa linha só pra ele. */}
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 md:gap-5 lg:mt-12 lg:grid-cols-4">
           {beneficios.itens.map((item) => (
             <li key={item.titulo} className="h-full">
               <Card className="h-full transition-colors duration-150 hover:border-primary/30">

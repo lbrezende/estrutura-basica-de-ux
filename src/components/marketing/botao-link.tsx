@@ -39,8 +39,10 @@ export type BotaoLinkProps = ComponentPropsWithRef<typeof Link> & {
 const BASE =
   "group inline-flex select-none items-center justify-center rounded-ds font-medium whitespace-nowrap " +
   "transition-[background-color,border-color,color,opacity,filter] duration-150 active:translate-y-px " +
-  // Espelha o mínimo de 44px do primitivo `Button` para dedo.
-  "pointer-coarse:min-h-11 pointer-coarse:min-w-11"
+  // Espelha o piso de 44 por 44 do primitivo `Button`. Aqui a marcação é
+  // explícita porque `<a>` só ganha o piso global quando está em `nav` ou
+  // `footer`, e um link solto dentro de parágrafo não pode virar um bloco.
+  "min-h-[var(--ds-toque)] min-w-[var(--ds-toque)]"
 
 const VARIANTES: Record<VarianteBotaoLink, string> = {
   primaria: "preenchimento-acao text-primary-ink hover:brightness-[1.08]",
@@ -57,10 +59,12 @@ const BRILHOS: Record<BrilhoBotaoLink, string> = {
   marca: "brilho-marca",
 }
 
+/* Espelha `TAMANHOS` do `Button`: as alturas ficam abaixo dos 44px e o piso as
+   levanta; só o `lg` passa por conta própria, pra o CTA continuar maior. */
 const TAMANHOS: Record<TamanhoBotaoLink, string> = {
   sm: "h-8 gap-1.5 px-3 text-[13px] [&_svg]:size-3.5",
   md: "h-10 gap-2 px-4 text-sm [&_svg]:size-4",
-  lg: "h-12 gap-2 px-6 text-[15px] [&_svg]:size-[18px]",
+  lg: "h-14 gap-2 px-6 text-[15px] [&_svg]:size-[18px]",
 }
 
 /** O chip é redondo e quase da altura do botão. Sobra pouco espaço à direita. */

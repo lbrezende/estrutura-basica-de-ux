@@ -95,7 +95,7 @@ export function BarraLateral({ aberta, aoFechar }: PropsBarraLateral) {
         <div className="flex h-16 shrink-0 items-center justify-between gap-2 border-b border-hairline px-4">
           <Link
             href="/app"
-            className="realce-marca -mx-1 flex min-w-0 items-center rounded-ds px-1 py-1 transition-opacity hover:opacity-80 pointer-coarse:min-h-11"
+            className="realce-marca -mx-1 flex min-w-0 items-center rounded-ds px-1 py-1 transition-opacity hover:opacity-80 min-h-[var(--ds-toque)]"
           >
             <Logo />
           </Link>
@@ -125,7 +125,7 @@ export function BarraLateral({ aberta, aoFechar }: PropsBarraLateral) {
                     href={item.href}
                     aria-current={ativo ? "page" : undefined}
                     className={cn(
-                      "group relative flex items-center gap-3 rounded-ds px-3 py-2 text-sm transition-colors pointer-coarse:min-h-11",
+                      "group relative flex items-center gap-3 rounded-ds px-3 py-2 text-sm transition-colors min-h-[var(--ds-toque)]",
                       // Quatro sinais somados (tarja, superfície elevada, brilho e
                       // peso do texto) porque a diferença entre `surface` e
                       // `elevated` é sutil em parte dos 71 temas. Sozinha, ela não

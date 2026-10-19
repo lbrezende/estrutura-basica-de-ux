@@ -105,15 +105,22 @@ export function Quadro({ pedidos, clientes, aoMover, aoEditar, aoCriarEm }: Prop
   return (
     <div>
       {/*
-        O quadro é o único trecho que rola na horizontal. As margens negativas
-        devolvem o respiro da página para as bordas da tela, e o `overflow` fica
-        preso aqui dentro (a página nunca rola de lado). A partir de xl cabem as
-        quatro colunas e o quadro vira grade.
+        No celular as quatro etapas EMPILHAM.
+
+        O quadro rolando de lado é exatamente a queixa de quem entrega: uma mão
+        ocupada, o polegar no meio da tela e metade da coluna escondida fora da
+        borda. Empilhado, cada etapa aparece inteira e a rolagem é a vertical, a
+        única que o polegar faz sem soltar a caixa.
+
+        A partir de `sm` (tablet, duas mãos) volta a faixa que rola na horizontal,
+        com as margens negativas devolvendo o respiro da página para as bordas e o
+        `overflow` preso aqui dentro. A partir de `xl` cabem as quatro colunas e o
+        quadro vira grade.
       */}
       <div
         className={cn(
-          "-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain scroll-px-4 px-4 pb-2",
-          "sm:-mx-6 sm:scroll-px-6 sm:px-6",
+          "flex flex-col gap-3",
+          "sm:-mx-6 sm:snap-x sm:snap-mandatory sm:flex-row sm:overflow-x-auto sm:overscroll-x-contain sm:scroll-px-6 sm:px-6 sm:pb-2",
           "lg:-mx-8 lg:scroll-px-8 lg:px-8",
           "xl:mx-0 xl:grid xl:grid-cols-4 xl:px-0 xl:pb-0"
         )}

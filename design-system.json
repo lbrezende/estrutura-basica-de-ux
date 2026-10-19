@@ -1,27 +1,31 @@
 {
-  "$comment": "O visual inteiro do app sai daqui. Troque estes valores (ou peça para a IA trocar) e a landing, o sistema e o Storybook mudam juntos. Os 71 sistemas disponíveis estão em src/lib/design-systems.json.",
-  "id": "linear.app",
-  "name": "Linear",
-  "mode": "dark",
+  "id": "intercom",
+  "name": "Intercom",
+  "mode": "light",
   "tokens": {
-    "canvas": "#010102",
-    "surface": "#0f1011",
-    "surfaceElevated": "#18191a",
-    "ink": "#f7f8f8",
-    "inkMuted": "#8a8f98",
-    "primary": "#5e6ad2",
+    "canvas": "#f5f1ec",
+    "surface": "#ffffff",
+    "surfaceElevated": "#f5f5f5",
+    "ink": "#111111",
+    "inkMuted": "#6d6d6d",
+    "primary": "#111111",
     "primaryInk": "#ffffff",
-    "primaryHover": "#828fff",
-    "hairline": "#23252a",
-    "success": "#27a644",
-    "danger": "#f87171",
-    "warning": "#f5a623"
+    "primaryHover": "#0f0f0f",
+    "hairline": "#ccc9c5",
+    "success": "#147c3b",
+    "danger": "#b91c1c",
+    "warning": "#9c5f07"
   },
   "type": {
-    "display": "var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif",
-    "body": "var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif",
-    "displayWeight": 600,
-    "tracking": "-0.02em"
+    "display": "Saans, ui-sans-serif, system-ui, sans-serif",
+    "body": "Saans, ui-sans-serif, system-ui, sans-serif",
+    "displayWeight": 500,
+    "tracking": "-0.0313em"
   },
-  "radius": "8px"
+  "radius": "8px",
+  "layout": {
+    "density": "comfortable",
+    "space": "14px",
+    "lineHeight": 1.65
+  }
 }

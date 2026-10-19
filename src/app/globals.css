@@ -6,24 +6,49 @@
   valores de lá. Mexer no JSON muda a landing, o sistema e o Storybook juntos.
 */
 :root {
-  --ds-canvas: #010102;
-  --ds-surface: #0f1011;
-  --ds-surface-elevated: #18191a;
-  --ds-ink: #f7f8f8;
-  --ds-ink-muted: #8a8f98;
-  --ds-primary: #5e6ad2;
+  --ds-canvas: #f5f1ec;
+  --ds-surface: #ffffff;
+  --ds-surface-elevated: #f5f5f5;
+  --ds-ink: #111111;
+  --ds-ink-muted: #6d6d6d;
+  --ds-primary: #111111;
   --ds-primary-ink: #ffffff;
-  --ds-primary-hover: #828fff;
-  --ds-hairline: #23252a;
-  --ds-success: #27a644;
-  --ds-danger: #f87171;
-  --ds-warning: #f5a623;
+  --ds-primary-hover: #0f0f0f;
+  --ds-hairline: #ccc9c5;
+  --ds-success: #147c3b;
+  --ds-danger: #b91c1c;
+  --ds-warning: #9c5f07;
 
-  --ds-font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --ds-font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --ds-display-weight: 600;
-  --ds-tracking: -0.02em;
+  --ds-font-display: Saans, ui-sans-serif, system-ui, sans-serif;
+  --ds-font-body: Saans, ui-sans-serif, system-ui, sans-serif;
+  --ds-display-weight: 500;
+  --ds-tracking: -0.0313em;
   --ds-radius: 8px;
+
+  /* `layout` do design-system.json. */
+  --ds-density: comfortable;
+  --ds-space: 14px;
+  --ds-line-height: 1.65;
+
+  /*
+    Piso do alvo de toque. Não sai do JSON porque não é decisão de marca: são os
+    44px que o dedo precisa, iguais em qualquer tema.
+  */
+  --ds-toque: 44px;
+
+  /*
+    As três cores semânticas puxadas em direção à TINTA.
+
+    Não é troca de cor: é a mesma cor do JSON com um passo a mais de contraste.
+    Elas aparecem como texto pequeno em cima de uma pastilha da própria cor
+    (`bg-success/12`), e nesse fundo o valor original fecha 4.02:1 — abaixo dos
+    4.5:1 que o briefing exige. Puxar para `--ds-ink` funciona nos dois modos,
+    porque a tinta é escura no tema claro e clara no escuro: em ambos é o lado
+    que AFASTA a cor do fundo.
+  */
+  --ds-success-legivel: color-mix(in srgb, var(--ds-success) 72%, var(--ds-ink));
+  --ds-danger-legivel: color-mix(in srgb, var(--ds-danger) 88%, var(--ds-ink));
+  --ds-warning-legivel: color-mix(in srgb, var(--ds-warning) 72%, var(--ds-ink));
 }
 
 @theme inline {
@@ -36,20 +61,37 @@
   --color-primary-ink: var(--ds-primary-ink);
   --color-primary-hover: var(--ds-primary-hover);
   --color-hairline: var(--ds-hairline);
-  --color-success: var(--ds-success);
-  --color-danger: var(--ds-danger);
-  --color-warning: var(--ds-warning);
+  --color-success: var(--ds-success-legivel);
+  --color-danger: var(--ds-danger-legivel);
+  --color-warning: var(--ds-warning-legivel);
 
   --font-display: var(--ds-font-display);
   --font-body: var(--ds-font-body);
 
   --radius-ds: var(--ds-radius);
+
+  /*
+    A UNIDADE BASE DE ESPAÇAMENTO sai do JSON.
+
+    No Tailwind 4, `--spacing` é o degrau que multiplica TODA utility de espaço e
+    tamanho (`p-4`, `gap-3`, `size-10`). Ancorar `p-4` em `layout.space` faz o
+    ritmo inteiro do app — padding, gap, altura — descer de um valor só.
+  */
+  --spacing: calc(var(--ds-space) / 4);
+
+  /* `layout.lineHeight` na altura de linha do texto corrido. */
+  --text-xs--line-height: var(--ds-line-height);
+  --text-sm--line-height: var(--ds-line-height);
+  --text-base--line-height: var(--ds-line-height);
+  --text-lg--line-height: var(--ds-line-height);
+  --leading-corrido: var(--ds-line-height);
 }
 
 body {
   background: var(--ds-canvas);
   color: var(--ds-ink);
   font-family: var(--ds-font-body);
+  line-height: var(--ds-line-height);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -60,6 +102,45 @@ h4 {
   font-family: var(--ds-font-display);
   font-weight: var(--ds-display-weight);
   letter-spacing: var(--ds-tracking);
+}
+
+/*
+  Alvo de toque de 44px, sem depender do tipo de ponteiro.
+
+  Estava em `pointer-coarse:` no botão, o que deixava o mouse de fora. A regra do
+  briefing não abre essa exceção: 44 por 44 em todo controle, sempre. Fica em
+  `min-*` para o elemento ainda poder crescer, e o `:where()` mantém
+  especificidade zero, então qualquer classe do componente continua vencendo.
+*/
+:where(button, [role="button"], select, summary, input:not([type="hidden"])) {
+  min-height: var(--ds-toque);
+}
+
+:where(button, [role="button"], summary) {
+  min-width: var(--ds-toque);
+}
+
+/* Link de navegação e de rodapé: alvo cheio sem inchar link dentro de parágrafo. */
+:where(nav a, footer a, [data-alvo-toque]) {
+  min-height: var(--ds-toque);
+  display: inline-flex;
+  align-items: center;
+}
+
+/*
+  Item de grade não empurra a página para o lado.
+
+  `min-width: auto` é o padrão de um item de grid, e ele nunca encolhe abaixo do
+  conteúdo indivisível que carrega dentro. `truncate` é justamente isso
+  (`white-space: nowrap`), então um endereço comprido no cartão do destinatário
+  esticava a coluna inteira e abria rolagem horizontal em 375px — o contrário do
+  que o `truncate` foi colocado ali para fazer.
+
+  Vai em `:where()` (especificidade zero) para qualquer `min-w-*` escrito no
+  componente continuar vencendo.
+*/
+:where(.grid) > * {
+  min-width: 0;
 }
 
 /*
@@ -99,24 +180,30 @@ h4 {
    some. Por isso a polaridade é derivada do modo, e não fixa.
    ========================================================================== */
 
+/*
+  Nenhum valor de cor escrito à mão aqui: tudo sai dos tokens do JSON via
+  `color-mix`. No tema escuro a luz de cima é a própria tinta (que é clara nesses
+  temas) e a sombra é o canvas; no claro a luz é a superfície e a sombra é a
+  tinta. É a mesma receita com a polaridade virada, e por isso ela vale para
+  qualquer paleta que você colar no design-system.json.
+*/
 :root {
-  /* Tema escuro: a luz de cima é branca e a sombra de baixo é preta forte. */
-  --realce: rgba(255, 255, 255, 0.25);
-  --realce-suave: rgba(255, 255, 255, 0.1);
-  --realce-fio: rgba(255, 255, 255, 0.12);
-  --sombra-borda: rgba(0, 0, 0, 1);
-  --sombra-difusa: rgba(0, 0, 0, 0.5);
+  --realce: color-mix(in srgb, var(--ds-ink) 25%, transparent);
+  --realce-suave: color-mix(in srgb, var(--ds-ink) 10%, transparent);
+  --realce-fio: color-mix(in srgb, var(--ds-ink) 12%, transparent);
+  --sombra-borda: var(--ds-canvas);
+  --sombra-difusa: color-mix(in srgb, var(--ds-canvas) 50%, transparent);
   --forca-brilho: 0.25;
 }
 
 :root[data-mode="light"] {
-  /* Tema claro: o realce branco precisa ser bem mais forte pra aparecer, e a
-     sombra de baixo vira um cinza sutil, senão o componente fica sujo. */
-  --realce: rgba(255, 255, 255, 0.9);
-  --realce-suave: rgba(255, 255, 255, 0.55);
-  --realce-fio: rgba(0, 0, 0, 0.08);
-  --sombra-borda: rgba(0, 0, 0, 0.1);
-  --sombra-difusa: rgba(15, 23, 42, 0.12);
+  /* Tema claro: o realce precisa ser bem mais forte pra aparecer, e a sombra de
+     baixo é a tinta bem diluída, senão o componente fica sujo. */
+  --realce: color-mix(in srgb, var(--ds-surface) 90%, transparent);
+  --realce-suave: color-mix(in srgb, var(--ds-surface) 55%, transparent);
+  --realce-fio: color-mix(in srgb, var(--ds-ink) 8%, transparent);
+  --sombra-borda: color-mix(in srgb, var(--ds-ink) 10%, transparent);
+  --sombra-difusa: color-mix(in srgb, var(--ds-ink) 12%, transparent);
   --forca-brilho: 0.18;
 }
 
@@ -271,7 +358,7 @@ h4 {
       linear-gradient(
         to bottom,
         transparent 76%,
-        color-mix(in srgb, var(--ds-primary) 88%, #000) 100%
+        color-mix(in srgb, var(--ds-primary) 40%, var(--ds-primary-hover)) 100%
       );
   }
 

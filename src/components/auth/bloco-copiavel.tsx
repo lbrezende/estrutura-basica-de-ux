@@ -84,7 +84,15 @@ export function BlocoCopiavel({ codigo, rotulo, className }: BlocoCopiavelProps)
         </Button>
       </div>
 
-      <pre className="overflow-x-auto px-3 py-2.5 font-mono text-[12.5px] leading-relaxed text-ink">
+      {/*
+        Quebra em vez de rolar de lado.
+
+        Era `overflow-x-auto`, e em 375px a URL de retorno do Google saía pela
+        direita: quem precisa dela é justamente quem não sabe que ali dá pra
+        arrastar. `break-all` porque uma URL não tem espaço onde quebrar, e o
+        botão Copiar continua sendo o caminho certo de qualquer jeito.
+      */}
+      <pre className="px-3 py-2.5 font-mono text-[12.5px] leading-relaxed break-all whitespace-pre-wrap text-ink">
         <code>{codigo}</code>
       </pre>
 

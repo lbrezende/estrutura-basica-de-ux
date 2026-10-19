@@ -11,9 +11,9 @@
  */
 
 export const marca = {
-  nome: "Órbita",
-  tagline: "O painel que mantém sua operação girando",
-  descricaoCurta: "Clientes, pedidos e agenda num lugar só.",
+  nome: "Rota Certa",
+  tagline: "Toda entrega de brinquedo com prova na mão",
+  descricaoCurta: "Destinatários, entregas e rotas do dia num lugar só.",
 }
 
 export const landing = {
@@ -31,13 +31,13 @@ export const landing = {
 
   /** Dobra 1: herói */
   hero: {
-    eyebrow: "Pra pequenas operações de serviço",
-    titulo: "Sua operação inteira em uma tela só",
+    eyebrow: "Pra quem entrega brinquedo na rua",
+    titulo: "A entrega do brinquedo, comprovada na hora",
     subtitulo:
-      "Pare de perder pedido em conversa de WhatsApp e cliente em planilha. O Órbita junta quem você atende, o que está em andamento e o que vem pela frente. Tudo num painel que cabe na cabeça.",
+      "Ocorrência registrada sem foto vira disputa uma semana depois. O Rota Certa junta quem recebe, o que está na rua e a rota do dia numa tela feita pra uma mão só, sol na cara e sinal fraco.",
     ctaPrimario: "Começar agora",
     ctaSecundario: "Ver como funciona",
-    provaSocial: "Usado por mais de 400 pequenos negócios no Brasil",
+    provaSocial: "Usado por mais de 400 entregadores de brinquedo no Brasil",
   },
 
   /**
@@ -50,73 +50,82 @@ export const landing = {
    */
   mockup: {
     descricao:
-      "Prévia do painel do Órbita: indicadores do mês, pedidos por semana e os próximos compromissos.",
-    endereco: "app.orbita.com.br",
+      "Prévia do painel do Rota Certa: o resumo do dia, as entregas por situação e as rotas do dia em destaque.",
+    endereco: "app.rotacerta.com.br",
     titulo: "Painel",
     periodo: "Últimos 7 dias",
     metricas: [
-      { rotulo: "Clientes ativos", valor: "38", variacao: "+12%" },
-      { rotulo: "Pedidos abertos", valor: "14", variacao: "+3" },
-      { rotulo: "A receber", valor: "R$ 47,9 mil", variacao: "+18%" },
+      { rotulo: "Destinatários ativos", valor: "38", variacao: "+12%" },
+      { rotulo: "Entregas na rua", valor: "14", variacao: "+3" },
+      { rotulo: "Valor em rota", valor: "R$ 47,9 mil", variacao: "+18%" },
     ],
     grafico: {
-      titulo: "Pedidos por semana",
+      titulo: "Entregas por situação",
       variacao: "+18%",
     },
     lista: {
-      titulo: "Próximos compromissos",
+      titulo: "Rotas do dia",
       itens: [
-        { titulo: "Apresentação das rotas", pessoa: "Marina Alvarenga", quando: "Hoje, 10:00" },
-        { titulo: "Alinhamento trimestral", pessoa: "Rafael Nogueira", quando: "Amanhã, 14:30" },
-        { titulo: "Kickoff do site", pessoa: "Camila Ishikawa", quando: "Qui, 09:00" },
+        { titulo: "Zona Sul, 12 paradas", pessoa: "Marina Alvarenga", quando: "Hoje, 07:30" },
+        { titulo: "Centro e Sé, 9 paradas", pessoa: "Rafael Nogueira", quando: "Hoje, 08:00" },
+        { titulo: "Zona Leste, 15 paradas", pessoa: "Camila Ishikawa", quando: "Amanhã, 07:00" },
       ],
     },
   },
 
-  /** Dobra 2: os três maiores benefícios */
+  /** Dobra 2: os benefícios que o produto promete */
   beneficios: {
-    titulo: "Três problemas a menos na sua semana",
+    titulo: "O que muda no seu dia a partir de amanhã",
     itens: [
       {
+        icone: "dados",
+        titulo: "Tudo num lugar só",
+        texto:
+          "Destinatários, entregas e rotas do dia no mesmo app. Nenhuma planilha solta, nenhum endereço perdido no grupo do WhatsApp.",
+      },
+      {
+        icone: "check",
+        titulo: "Fim da disputa",
+        texto:
+          "Deu problema na porta? Registra a ocorrência com foto na hora. A prova sai do celular junto com você, não uma semana depois.",
+      },
+      {
+        icone: "usuario",
+        titulo: "Interface feita pro entregador",
+        texto:
+          "Botão grande, alvo de toque que o dedo acerta e nada que estoure a tela pro lado. Funciona sob luz direta e com sinal fraco.",
+      },
+      {
         icone: "users",
-        titulo: "Nada mais se perde",
+        titulo: "Dá pra entregar entre amigos",
         texto:
-          "Cada cliente com histórico, contato e observação no mesmo lugar. Você para de procurar aquela mensagem de três semanas atrás.",
-      },
-      {
-        icone: "kanban",
-        titulo: "Você enxerga o andamento",
-        texto:
-          "Todo pedido numa coluna. Bate o olho e sabe o que está travado, o que está atrasado e o que já pode faturar.",
-      },
-      {
-        icone: "calendar",
-        titulo: "A semana já montada",
-        texto:
-          "Os compromissos aparecem junto com o cliente e o pedido relacionado. Chega de descobrir a reunião quinze minutos antes.",
+          "Divida uma rota com quem está perto e compartilhe entregas entre famílias diferentes. O combinado fica registrado.",
       },
     ],
   },
 
   /** Dobra 3: como funciona */
   comoFunciona: {
-    titulo: "Três passos e você tá rodando",
+    titulo: "Três passos e você tá na rua",
     subtitulo: "Sem migração complicada, sem treinamento de duas semanas.",
     passos: [
       {
         numero: "01",
-        titulo: "Seus clientes entram em dez minutos",
-        texto: "Importe de uma planilha ou cadastre na mão. Não tem migração, não precisa de ajuda.",
+        titulo: "Cadastre quem recebe",
+        texto:
+          "Nome, endereço, ponto de referência e telefone. Dá pra fazer na mão ou trazer de uma planilha, e leva dez minutos.",
       },
       {
         numero: "02",
-        titulo: "O quadro vira o seu processo",
-        texto: "Arraste os pedidos entre as colunas conforme o trabalho anda. É o seu jeito, não o nosso.",
+        titulo: "Monte a rota do dia",
+        texto:
+          "As paradas de cada entregador na ordem certa. Quem está na rua abre o app e já sabe qual é a próxima porta.",
       },
       {
         numero: "03",
-        titulo: "De manhã você já sabe onde pisar",
-        texto: "Os números se atualizam sozinhos. Você abre o painel e vê o que travou e o que já pode faturar.",
+        titulo: "Entregue e comprove",
+        texto:
+          "Cada encomenda anda de situação com um toque. Se der ocorrência, a foto entra junto e a disputa acaba ali.",
       },
     ],
   },
@@ -129,39 +138,44 @@ export const landing = {
     selo: "Mais escolhido",
     planos: [
       {
-        nome: "Começo",
+        nome: "Carrinho",
         preco: "R$ 0",
         periodo: "para sempre",
-        descricao: "Pra quem está organizando a casa.",
-        recursos: ["Até 20 clientes", "Pedidos ilimitados", "Agenda simples", "1 usuário"],
+        descricao: "Pra quem entrega sozinho e quer parar com a planilha.",
+        recursos: [
+          "Até 20 destinatários",
+          "Entregas ilimitadas",
+          "Rota do dia simples",
+          "1 entregador",
+        ],
         cta: "Começar de graça",
         destaque: false,
       },
       {
-        nome: "Operação",
+        nome: "Van",
         preco: "R$ 89",
         periodo: "por mês",
-        descricao: "Pra quem já tem time e volume.",
+        descricao: "Pra quem já tem mais de um entregador na rua.",
         recursos: [
-          "Clientes ilimitados",
-          "Quadro personalizável",
-          "Relatórios mensais",
-          "Até 5 usuários",
-          "Suporte por WhatsApp",
+          "Destinatários ilimitados",
+          "Ocorrência com foto na hora",
+          "Painel com o resumo do dia",
+          "Até 5 entregadores",
+          "Entrega entre amigos",
         ],
         cta: "Começar teste de 14 dias",
         destaque: true,
       },
       {
-        nome: "Escala",
+        nome: "Frota",
         preco: "R$ 249",
         periodo: "por mês",
-        descricao: "Pra operações com vários times.",
+        descricao: "Pra transportadora com várias rotas no mesmo dia.",
         recursos: [
-          "Tudo do Operação",
-          "Usuários ilimitados",
+          "Tudo do Van",
+          "Entregadores ilimitados",
+          "Compartilhar entre famílias diferentes",
           "Integrações via API",
-          "Gerente de conta",
           "SLA de 4 horas",
         ],
         cta: "Falar com vendas",
@@ -173,31 +187,31 @@ export const landing = {
   /** Dobra 5: time */
   time: {
     titulo: "Quem está por trás",
-    subtitulo: "Um time pequeno que já operou o problema que resolve.",
+    subtitulo: "Um time pequeno que já rodou a rua que resolve.",
     pessoas: [
       {
         nome: "Ana Ribeiro",
         cargo: "Produto",
-        bio: "Passou seis anos gerenciando operação de agência antes de decidir construir a ferramenta que faltava.",
+        bio: "Passou seis anos coordenando entrega de última milha antes de decidir construir a ferramenta que faltava no bolso do entregador.",
         iniciais: "AR",
       },
       {
         nome: "Bruno Salles",
         cargo: "Engenharia",
-        bio: "Construiu sistemas internos para logística e saúde. Gosta de software que some na frente do usuário.",
+        bio: "Construiu sistemas internos para logística e transporte. Gosta de software que funciona com uma barra de sinal.",
         iniciais: "BS",
       },
       {
         nome: "Clara Fontes",
         cargo: "Atendimento",
-        bio: "Atende cada cliente novo pessoalmente na primeira semana. Conhece o produto melhor que qualquer um.",
+        bio: "Passa uma manhã na rua com cada cliente novo. Conhece a rota melhor que qualquer mapa.",
         iniciais: "CF",
       },
     ],
   },
 
   rodape: {
-    texto: "Feito pra quem toca a operação todo dia.",
+    texto: "Feito pra quem passa o dia na rua entregando.",
     navegacao: "Links do rodapé",
     links: [
       { rotulo: "Termos", href: "#" },
@@ -211,9 +225,9 @@ export const landing = {
 export const sistema = {
   nav: [
     { rotulo: "Painel", href: "/app", icone: "layout-dashboard" },
-    { rotulo: "Clientes", href: "/app/clientes", icone: "users" },
-    { rotulo: "Pedidos", href: "/app/pedidos", icone: "kanban" },
-    { rotulo: "Agenda", href: "/app/agenda", icone: "calendar" },
+    { rotulo: "Destinatários", href: "/app/clientes", icone: "users" },
+    { rotulo: "Entregas", href: "/app/pedidos", icone: "kanban" },
+    { rotulo: "Rotas do dia", href: "/app/agenda", icone: "calendar" },
     { rotulo: "Configurações", href: "/app/configuracoes", icone: "settings" },
   ],
 
@@ -232,33 +246,33 @@ export const sistema = {
   },
 
   entidades: {
-    cliente: { singular: "cliente", plural: "clientes", artigo: "o" },
-    pedido: { singular: "pedido", plural: "pedidos", artigo: "o" },
-    agendamento: { singular: "compromisso", plural: "compromissos", artigo: "o" },
+    cliente: { singular: "destinatário", plural: "destinatários", artigo: "o" },
+    pedido: { singular: "entrega", plural: "entregas", artigo: "a" },
+    agendamento: { singular: "rota do dia", plural: "rotas do dia", artigo: "a" },
   },
 
   etapas: {
-    novo: "Novo",
-    em_andamento: "Em andamento",
-    aguardando: "Aguardando",
-    concluido: "Concluído",
+    novo: "A coletar",
+    em_andamento: "Na rua",
+    aguardando: "Com ocorrência",
+    concluido: "Entregue",
   },
 
   vazios: {
     clientes: {
-      titulo: "Nenhum cliente ainda",
-      texto: "Cadastre o primeiro e ele aparece aqui com histórico e contato.",
-      acao: "Cadastrar cliente",
+      titulo: "Nenhum destinatário ainda",
+      texto: "Cadastre o primeiro e ele aparece aqui com endereço, ponto de referência e telefone.",
+      acao: "Cadastrar destinatário",
     },
     pedidos: {
       titulo: "O quadro está limpo",
-      texto: "Crie um pedido e arraste entre as colunas conforme o trabalho anda.",
-      acao: "Criar pedido",
+      texto: "Crie uma entrega e arraste entre as colunas conforme a encomenda anda.",
+      acao: "Criar entrega",
     },
     agenda: {
-      titulo: "Semana livre",
-      texto: "Nenhum compromisso marcado. Aproveite, ou marque o primeiro.",
-      acao: "Marcar compromisso",
+      titulo: "Semana sem rota",
+      texto: "Nenhuma rota do dia montada. Aproveite, ou monte a primeira.",
+      acao: "Criar rota do dia",
     },
   },
 
@@ -281,77 +295,81 @@ export const sistema = {
     metricas: {
       clientesAtivos: {
         icone: "users",
-        rotulo: "Clientes ativos",
-        dica: "Com status ativo",
+        rotulo: "Destinatários ativos",
+        dica: "Com situação ativa",
       },
       pedidosEmAndamento: {
         icone: "kanban",
-        rotulo: "Pedidos em andamento",
-        dica: "Novos, em andamento e aguardando",
+        rotulo: "Entregas em aberto",
+        dica: "A coletar, na rua e com ocorrência",
       },
       valorEmAberto: {
         icone: "dinheiro",
-        rotulo: "Valor em aberto",
-        dica: "Soma dos pedidos ainda não concluídos",
+        rotulo: "Valor em rota",
+        dica: "Soma declarada das entregas que ainda não chegaram",
       },
       compromissosDaSemana: {
         icone: "calendar",
-        rotulo: "Compromissos na semana",
+        rotulo: "Rotas do dia na semana",
         dica: "De hoje até os próximos sete dias",
       },
     },
 
     grafico: {
-      titulo: "Pedidos por etapa",
-      descricao: "Onde o trabalho está parado agora.",
-      /** Curto e sem botão de propósito: o convite para criar já está em "Pedidos recentes". */
-      vazio: "Sem pedido nenhum para medir ainda",
+      titulo: "Entregas por situação",
+      descricao: "Onde a encomenda está parada agora.",
+      /** Curto e sem botão de propósito: o convite para criar já está em "Entregas recentes". */
+      vazio: "Sem entrega nenhuma para medir ainda",
     },
 
     compromissos: {
-      titulo: "Próximos compromissos",
-      descricao: "Os quatro primeiros da fila.",
+      titulo: "Rotas do dia em destaque",
+      descricao: "As quatro primeiras da fila.",
       hoje: "Hoje",
-      verTodos: "Ver a agenda",
+      verTodos: "Ver as rotas do dia",
     },
 
     recentes: {
-      titulo: "Pedidos recentes",
-      descricao: "Os cinco últimos que entraram.",
-      verTodos: "Ver todos os pedidos",
+      titulo: "Entregas recentes",
+      descricao: "As cinco últimas que entraram.",
+      verTodos: "Ver todas as entregas",
     },
 
-    /** Pedido ou compromisso que aponta para um cliente que já foi apagado. */
-    semCliente: "Cliente removido",
+    /** Entrega ou rota do dia que aponta para um destinatário que já foi apagado. */
+    semCliente: "Destinatário removido",
 
     vazio: {
       titulo: "Seu painel está esperando o primeiro dado",
       texto:
-        "Cadastre um cliente e os números, o gráfico e a agenda começam a aparecer aqui sozinhos.",
-      acao: "Cadastrar cliente",
+        "Cadastre um destinatário e os números, o gráfico e as rotas do dia começam a aparecer aqui sozinhos.",
+      acao: "Cadastrar destinatário",
     },
   },
 
   /**
-   * A lista de clientes.
+   * A lista de destinatários.
    *
    * A ordem aqui espelha a ordem da tela: topo, filtros, formulário, painel de
    * detalhe, remoção. Achar o texto que você quer trocar é ler de cima pra baixo.
    */
   clientes: {
-    titulo: "Clientes",
-    descricao: "Quem você atende, com contato, situação e o que está em andamento com cada um.",
-    novo: "Novo cliente",
+    titulo: "Destinatários",
+    descricao: "Quem recebe, com endereço, ponto de referência e telefone.",
+    novo: "Novo destinatário",
 
-    /** Os três status do modelo de dados, com o nome que faz sentido aqui. */
+    /**
+     * Os três status do modelo de dados, com o nome que faz sentido aqui.
+     * Curtos de propósito: o selo divide a linha com o nome no cartão, e em
+     * 375px um rótulo comprido come o espaço do endereço.
+     */
     status: {
       ativo: "Ativo",
-      pendente: "Pendente",
+      pendente: "A confirmar",
       inativo: "Inativo",
     },
 
     filtros: {
-      buscar: "Buscar por nome, empresa ou e-mail",
+      buscar: "Buscar por nome, endereço ou e-mail",
       status: "Filtrar por situação",
       todos: "Todas as situações",
       limpar: "Limpar filtros",
@@ -359,68 +377,69 @@ export const sistema = {
 
     /** Vazio diferente do de `vazios.clientes`: aqui existe cadastro, o filtro é que esconde. */
     semResultado: {
-      titulo: "Nenhum cliente encontrado",
+      titulo: "Nenhum destinatário encontrado",
       texto: "Nenhum cadastro combina com a busca e o filtro de agora.",
     },
 
     formulario: {
-      tituloCriar: "Novo cliente",
-      descricaoCriar: "Só o nome e o e-mail são obrigatórios. O resto você completa quando souber.",
-      criar: "Cadastrar cliente",
+      tituloCriar: "Novo destinatário",
+      descricaoCriar:
+        "Só o nome e o e-mail são obrigatórios. O endereço e o ponto de referência você completa quando souber.",
+      criar: "Cadastrar destinatário",
       salvar: "Salvar alterações",
       campos: {
-        nome: "Nome",
-        empresa: "Empresa",
+        nome: "Quem recebe",
+        empresa: "Endereço",
         email: "E-mail",
         telefone: "Telefone",
         status: "Situação",
-        observacoes: "Observações",
+        observacoes: "Ponto de referência",
       },
       exemploNome: "Ex.: Marina Alvarenga",
-      exemploEmpresa: "Ex.: Estúdio Clara",
-      exemploEmail: "Ex.: marina@estudioclara.com.br",
+      exemploEmpresa: "Ex.: Rua das Acácias, 220, apto 51, Vila Mariana",
+      exemploEmail: "Ex.: marina@email.com.br",
       exemploTelefone: "(00) 00000-0000",
-      exemploObservacoes: "Ex.: prefere contato por WhatsApp, fecha contrato no começo do mês.",
+      exemploObservacoes: "Ex.: portão verde ao lado da padaria, deixar com o zelador até as 18h.",
       ajudaTelefone: "Celular ou fixo, com DDD.",
       erros: {
-        nome: "Informe o nome do cliente.",
+        nome: "Informe o nome de quem recebe.",
         emailVazio: "Informe o e-mail.",
-        emailInvalido: "E-mail inválido. Exemplo: nome@empresa.com.br",
+        emailInvalido: "E-mail inválido. Exemplo: nome@email.com.br",
         telefone: "Telefone incompleto. Informe o DDD e o número.",
       },
     },
 
     detalhe: {
-      dados: "Dados do cliente",
-      desde: "Cliente desde",
-      pedidos: "Pedidos",
-      semPedidos: "Nenhum pedido para este cliente ainda.",
-      agendamentos: "Compromissos",
-      semAgendamentos: "Nenhum compromisso marcado com este cliente.",
+      dados: "Dados do destinatário",
+      desde: "Destinatário desde",
+      pedidos: "Entregas",
+      semPedidos: "Nenhuma entrega para este destinatário ainda.",
+      agendamentos: "Rotas do dia",
+      semAgendamentos: "Nenhuma rota do dia passa por este destinatário.",
     },
 
     remocao: {
       titulo: "Remoção",
-      aviso: "Apaga o cadastro junto com os pedidos e os compromissos vinculados a ele.",
-      acao: "Remover cliente",
-      confirmarTitulo: "Remover este cliente?",
+      aviso: "Apaga o cadastro junto com as entregas e as rotas do dia vinculadas a ele.",
+      acao: "Remover destinatário",
+      confirmarTitulo: "Remover este destinatário?",
       confirmarTexto:
-        "O cadastro, os pedidos e os compromissos vinculados vão embora juntos. Não dá para desfazer.",
+        "O cadastro, as entregas e as rotas do dia vinculadas vão embora juntos. Não dá para desfazer.",
       confirmar: "Remover",
     },
   },
 
   /**
-   * Tela de Agenda.
+   * Tela de rotas do dia.
    *
    * `{dia}` é um marcador trocado pelo valor real na hora de exibir. Fica aqui,
    * e não montado no componente, pra que a frase inteira continue ajustável
    * numa linha só.
    */
   agenda: {
-    titulo: "Agenda",
-    descricao: "A semana inteira à vista, com cliente, horário e local em cada compromisso.",
-    novo: "Novo compromisso",
+    titulo: "Rotas do dia",
+    descricao: "A semana inteira à vista, com as paradas de cada entregador na ordem certa.",
+    novo: "Nova rota do dia",
 
     visao: {
       rotulo: "Modo de exibição",
@@ -432,8 +451,8 @@ export const sistema = {
       anterior: "Semana anterior",
       proxima: "Próxima semana",
       hoje: "Hoje",
-      novoNoDia: "Novo compromisso em {dia}",
-      diaLivre: "Livre",
+      novoNoDia: "Nova rota do dia em {dia}",
+      diaLivre: "Sem rota",
     },
 
     /** A contagem de cada dia sai de `entidades.agendamento`, não se repete aqui. */
@@ -442,42 +461,43 @@ export const sistema = {
     },
 
     cartao: {
-      editar: "Editar compromisso",
-      semCliente: "Cliente removido",
+      editar: "Editar rota do dia",
+      semCliente: "Destinatário removido",
     },
 
-    /** Situação do compromisso. Reaproveita os três status do modelo de dados. */
+    /** Situação da rota do dia. Reaproveita os três status do modelo de dados. */
     status: {
-      ativo: "Confirmado",
+      ativo: "Confirmada",
       pendente: "A confirmar",
-      inativo: "Cancelado",
+      inativo: "Cancelada",
     },
 
     formulario: {
-      tituloCriar: "Novo compromisso",
-      tituloEditar: "Editar compromisso",
-      descricaoCriar: "Reserve o horário e escolha quem você vai atender.",
-      descricaoEditar: "Ajuste o que mudou, ou tire o compromisso da agenda.",
-      criar: "Marcar compromisso",
+      tituloCriar: "Nova rota do dia",
+      tituloEditar: "Editar rota do dia",
+      descricaoCriar: "Reserve o horário de saída e escolha a parada desta rota.",
+      descricaoEditar: "Ajuste o que mudou, ou tire a rota do dia do calendário.",
+      criar: "Criar rota do dia",
       salvar: "Salvar alterações",
       remover: "Remover",
       campos: {
-        titulo: "Título",
-        cliente: "Cliente",
-        data: "Data",
-        hora: "Início",
-        duracao: "Duração",
-        local: "Local",
+        titulo: "Rota",
+        cliente: "Destinatário",
+        data: "Dia",
+        hora: "Saída",
+        duracao: "Duração prevista",
+        local: "Ponto de partida",
         status: "Situação",
       },
-      exemploTitulo: "Ex.: Apresentação da proposta",
-      exemploLocal: "Ex.: Google Meet, telefone, escritório",
-      semClientes: "Cadastre um cliente primeiro. Todo compromisso tem alguém do outro lado.",
+      exemploTitulo: "Ex.: Zona Sul, 12 paradas",
+      exemploLocal: "Ex.: Galpão da Marginal, CD Tatuapé, casa do entregador",
+      semClientes:
+        "Cadastre um destinatário primeiro. Toda rota do dia tem uma porta do outro lado.",
       erros: {
-        titulo: "Dê um nome ao compromisso.",
-        cliente: "Escolha o cliente.",
-        data: "Informe a data.",
-        hora: "Informe o horário de início.",
+        titulo: "Dê um nome à rota do dia.",
+        cliente: "Escolha o destinatário.",
+        data: "Informe o dia.",
+        hora: "Informe o horário de saída.",
       },
       duracoes: [
         { valor: "15", rotulo: "15 minutos" },
@@ -489,38 +509,38 @@ export const sistema = {
     },
 
     remocao: {
-      titulo: "Remover este compromisso?",
-      texto: "Ele sai da agenda na hora, e não dá para desfazer.",
+      titulo: "Remover esta rota do dia?",
+      texto: "Ela sai do calendário na hora, e não dá para desfazer.",
       confirmar: "Remover",
     },
   },
 
   /**
-   * O quadro de pedidos.
+   * O quadro de entregas.
    *
    * Os nomes das colunas ficam em `etapas`, logo acima. Aqui está o que
    * envolve o quadro: ações, cartão, formulário e mensagens.
    */
   pedidos: {
-    titulo: "Pedidos",
+    titulo: "Entregas",
     descricao:
-      "Arraste os cartões entre as colunas conforme o trabalho anda. Sem mouse? Cada cartão tem o botão Mover.",
-    novo: "Novo pedido",
-    /** Vira o nome do botão “+” de cada coluna: “Novo pedido em Aguardando”. */
-    novoNaColuna: "Novo pedido em",
-    editar: "Editar pedido",
-    criar: "Criar pedido",
+      "Cada cartão muda de situação pelo botão Mover, com uma mão só. No computador dá para arrastar entre as colunas.",
+    novo: "Nova entrega",
+    /** Vira o nome do botão “+” de cada coluna: “Nova entrega em Na rua”. */
+    novoNaColuna: "Nova entrega em",
+    editar: "Editar entrega",
+    criar: "Criar entrega",
     salvar: "Salvar alterações",
     mover: "Mover",
     moverPara: "Mover para",
-    etapaAtual: "Etapa atual",
-    /** Anunciado por leitor de tela depois de mover: “… para Em andamento: Título”. */
-    avisoMovido: "Pedido movido para",
+    etapaAtual: "Situação atual",
+    /** Anunciado por leitor de tela depois de mover: “… para Na rua: Título”. */
+    avisoMovido: "Entrega movida para",
     colunaVazia: "Nada nesta coluna",
     soltarAqui: "Solte aqui",
     somaDaColuna: "Soma da coluna",
-    atrasado: "Atrasado",
-    semCliente: "Sem cliente",
+    atrasado: "Atrasada",
+    semCliente: "Sem destinatário",
     /** Prefixo do campo de valor. Troque junto com a moeda em `formato.ts`. */
     simboloMoeda: "R$",
 
@@ -531,33 +551,33 @@ export const sistema = {
     },
 
     campos: {
-      titulo: "Título",
-      cliente: "Cliente",
-      valor: "Valor",
+      titulo: "O que vai na caixa",
+      cliente: "Destinatário",
+      valor: "Valor declarado",
       prioridade: "Prioridade",
-      prazo: "Prazo",
-      descricao: "Descrição",
-      etapa: "Etapa",
+      prazo: "Data da entrega",
+      descricao: "Ocorrência e comprovante",
+      etapa: "Situação",
     },
 
     ajudas: {
       valor: "Use vírgula para os centavos: 1.200,50.",
-      descricao: "Opcional. O combinado, em uma linha.",
-      semClientes: "Cadastre um cliente antes de criar o pedido.",
+      descricao: "Opcional. A ocorrência e o comprovante registrados na porta, em uma linha.",
+      semClientes: "Cadastre um destinatário antes de criar a entrega.",
     },
 
     erros: {
-      titulo: "Dê um nome ao pedido.",
-      cliente: "Escolha de quem é este pedido.",
+      titulo: "Diga o que vai na caixa.",
+      cliente: "Escolha quem recebe esta entrega.",
       valor: "Informe um valor de zero para cima.",
-      prazo: "Informe a data de entrega.",
+      prazo: "Informe a data da entrega.",
     },
 
     remocao: {
       acao: "Remover",
-      titulo: "Remover este pedido?",
-      texto: "Ele sai do quadro na hora, e não dá para desfazer.",
-      confirmar: "Remover pedido",
+      titulo: "Remover esta entrega?",
+      texto: "Ela sai do quadro na hora, e não dá para desfazer.",
+      confirmar: "Remover entrega",
     },
   },
 
@@ -632,7 +652,7 @@ export const sistema = {
       confirmarRestaurar: {
         titulo: "Restaurar os dados de exemplo?",
         texto:
-          "Os clientes, pedidos e compromissos que você criou ou editou somem, e os originais voltam.",
+          "Os destinatários, as entregas e as rotas do dia que você criou ou editou somem, e os originais voltam.",
         confirmar: "Restaurar",
       },
       confirmarLimpar: {
@@ -671,7 +691,7 @@ export const sistema = {
 export const entrada = {
   voltar: "Voltar para o site",
 
-  titulo: "Sua operação organizada em um clique",
+  titulo: "Sua rua organizada em um clique",
   subtitulo:
     "Sem cadastro, sem senha, sem e-mail de confirmação. O app roda no seu navegador e os dados ficam guardados aí mesmo.",
 
@@ -691,7 +711,7 @@ export const entrada = {
     },
     email: {
       rotulo: "Seu e-mail",
-      placeholder: "ana@estudio.com.br",
+      placeholder: "ana@rotacerta.com.br",
       ajuda: "Opcional. Fica só no seu navegador, e nenhuma mensagem é enviada.",
       erro: "Esse e-mail parece incompleto. Confira o @ e o domínio, ou deixe o campo em branco.",
     },
@@ -722,7 +742,7 @@ export const entrada = {
         titulo: "Crie um projeto",
         texto:
           "No seletor de projetos, no topo da página, escolha “Novo projeto”. O nome é só pra você se achar depois, então pode ser o nome do seu app.",
-        codigo: "Órbita workshop",
+        codigo: "Rota Certa workshop",
         codigoRotulo: "Nome sugerido",
       },
       {

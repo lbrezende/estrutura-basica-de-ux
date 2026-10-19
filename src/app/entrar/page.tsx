@@ -55,7 +55,7 @@ export default function PaginaEntrar() {
 
             <Link
               href="/"
-              className="-mx-2 inline-flex items-center gap-1.5 rounded-ds px-2 py-2 text-[13px] text-muted transition-colors duration-150 hover:text-ink pointer-coarse:min-h-11"
+              className="-mx-2 inline-flex items-center gap-1.5 rounded-ds px-2 py-2 text-[13px] text-muted transition-colors duration-150 hover:text-ink min-h-[var(--ds-toque)]"
             >
               <Icone nome="seta-esquerda" className="size-4" />
               {entrada.voltar}

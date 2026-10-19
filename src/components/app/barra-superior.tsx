@@ -49,7 +49,7 @@ export function BarraSuperior({
       />
 
       {/* A marca some junto com a coluna fixa no celular, e volta aqui. */}
-      <Link href="/app" className="realce-marca flex min-w-0 items-center rounded-ds transition-opacity hover:opacity-80 pointer-coarse:min-h-11 lg:hidden">
+      <Link href="/app" className="realce-marca flex min-w-0 items-center rounded-ds transition-opacity hover:opacity-80 min-h-[var(--ds-toque)] lg:hidden">
         <Logo />
       </Link>
 

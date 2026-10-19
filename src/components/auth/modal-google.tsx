@@ -77,7 +77,7 @@ export function ModalGoogle({ aberto, aoFechar, aoEntrarDireto }: ModalGooglePro
                   // Tinta no texto e cor da marca só no sublinhado: um link de
                   // 13px em `text-primary` não passa em contraste nos temas de
                   // primária clara.
-                  className="mt-2.5 inline-flex items-center gap-1.5 rounded-ds text-[13px] font-medium text-ink underline decoration-primary underline-offset-4 transition-[text-decoration-color] duration-150 hover:decoration-2"
+                  className="mt-2.5 inline-flex min-h-[var(--ds-toque)] items-center gap-1.5 rounded-ds text-[13px] font-medium text-ink underline decoration-primary underline-offset-4 transition-[text-decoration-color] duration-150 hover:decoration-2"
                 >
                   {passo.link.rotulo}
                   <Icone nome="link-externo" className="size-3.5" />

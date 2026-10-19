@@ -78,8 +78,11 @@ export function CartaoCliente({ cliente, pedidos, agendamentos, aoAbrir }: Props
             </button>
           </CardTitulo>
 
+          {/* Duas linhas em vez de `truncate`: o endereço é o dado que decide se
+              o entregador acha a porta, e cortar "Rua Trajano Reis, 310, bloco…"
+              na primeira vírgula não ajuda ninguém. */}
           {cliente.empresa && (
-            <p className="mt-0.5 truncate text-sm text-muted">{cliente.empresa}</p>
+            <p className="mt-0.5 line-clamp-2 text-sm text-muted">{cliente.empresa}</p>
           )}
         </div>
 
